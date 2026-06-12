@@ -716,8 +716,7 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
 }
 
 /* ============ TERRITORY / CAVE THUMBNAILS ============
-   Cave/den navigation tiles. Only recolored — the stock images are
-   left alone on purpose (no placeholder replacement system here). */
+   Cave/den navigation tiles. */
 .thumbnail,
 .col-xs-4 > a,
 .col-xs-3 > a,
@@ -831,7 +830,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ============================================================
    TERRITORY DESCRIPTION — .nub-* classes
-   the mangrove dark · camouflage dossier
    ============================================================ */
 
 .nub-territory {
@@ -871,11 +869,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 5;
 }
 
-/* ── KILL LIODEN'S INJECTED <br> TAGS ──
-   Lioden converts every newline in the pasted snippet into a <br>,
-   which wrecks flex rows and spacing. Hide them all inside the
-   territory, then re-enable them ONLY inside text blocks where a
-   manual line break is wanted. */
+/* ── KILL LIODEN'S INJECTED <br> TAGS ── */
 .nub-territory br { display: none !important; }
 .nub-text br,
 .nub-subtitle br,
@@ -1502,7 +1496,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 3px;
 }
 
-/* ── GALLERY (received art) ── */
+/* ── GALLERY ── */
 .nub-gallery {
     counter-reset: nub-exhibit;
     display: flex;
