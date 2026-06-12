@@ -1,0 +1,1671 @@
+/* ============================================================
+   NUB'S DEN — the mangrove dark
+   swamp · camouflage · army · a little bit of horror
+   for nub (#166079) · css by nub
+   ------------------------------------------------------------
+   YOU DON'T NEED TO EDIT THIS FILE.
+   All text, image URLs and links live in nub-den.html.
+   See EDITING-GUIDE.md for every editable spot.
+
+   There is NO placeholder-image system in this file.
+   Every <img> in the HTML is a plain image slot — swap the
+   src="" URLs yourself (or replace king.png / art-*.png in
+   this repo and keep the URLs as they are).
+
+   Palette:
+     • swamp black .......... #060904
+     • mud / moss panel ..... #0b110a, #121a0e
+     • olive drab border .... #3a4a28, #4e6030
+     • olive accent ......... #8aa04e
+     • pale olive bright .... #c2d47a
+     • rust (the king) ...... #c2632a, bright #e08a40
+     • bone text ............ #c6c1a4
+     • toxic glow ........... #9ccf4d
+     • blood ................ #a03020
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ============ PAGE BACKGROUND ============ */
+body {
+    background: #060904 !important;
+    background-image:
+        radial-gradient(ellipse at 25% 20%, rgba(78, 96, 48, 0.14) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 75%, rgba(46, 64, 30, 0.16) 0%, transparent 52%),
+        radial-gradient(ellipse at 60% 0%,  rgba(194, 99, 42, 0.07) 0%, transparent 40%),
+        radial-gradient(ellipse at 10% 90%, rgba(156, 207, 77, 0.05) 0%, transparent 45%) !important;
+    background-attachment: fixed !important;
+    color: #c6c1a4 !important;
+    font-family: 'Crimson Text', Georgia, serif !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+}
+
+/* ============ MAIN CONTENT WRAPPER ============ */
+div.container.main,
+.container.main {
+    background: rgba(7, 11, 6, 0.94) !important;
+    border: 1px solid rgba(78, 96, 48, 0.30) !important;
+    border-top: none !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.7) !important;
+    color: #c6c1a4 !important;
+}
+
+.col-md-9 {
+    background: transparent !important;
+    color: #c6c1a4 !important;
+}
+
+/* ============ ROUND LION PORTRAIT ============ */
+div#lion_image,
+#lion_image {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 3px solid #4e6030 !important;
+    box-shadow: 0 0 28px rgba(138, 160, 78, 0.32), 0 0 55px rgba(156, 207, 77, 0.12) !important;
+    position: relative !important;
+}
+
+div#lion_image > div {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+/* Premade tag/avatar images plus USER-UPLOADED tags via the
+   .commentTag class and common user-image hosting paths. The class
+   selector is the reliable one because user uploads can live at any
+   URL the user provides. */
+img[src*="images/tags/"],
+img[src*="/images/tags/"],
+img[src*="tags/june"],
+img[src*="tags/jul"],
+img[src*="tags/aug"],
+img[src*="tags/sep"],
+img[src*="tags/oct"],
+img[src*="tags/nov"],
+img[src*="tags/dec"],
+img[src*="tags/jan"],
+img[src*="tags/feb"],
+img[src*="tags/mar"],
+img[src*="tags/apr"],
+img[src*="tags/may"],
+img[src*="static.lioden.com/img/uimages"],
+img[src*="static.lioden.com/uploads"],
+img[src*="static.lioden.com/usertags"],
+img[src*="/uimages/"],
+img[src*="/usertags/"],
+img.commentTag,
+.comment img.commentTag,
+.commentTag {
+    border-radius: 50% !important;
+    border: 2px solid #4e6030 !important;
+    box-shadow: 0 0 18px rgba(138, 160, 78, 0.30), 0 0 36px rgba(156, 207, 77, 0.10) !important;
+    object-fit: cover !important;
+}
+
+/* Comment-tag dimensions: Lioden's inline style sets width:40px,
+   height:40px, border-radius:4px — keep the size, force the circle. */
+img.commentTag,
+.comment img.commentTag,
+.commentTag {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+}
+
+/* ============ NAVIGATION BAR ============ */
+.topbar,
+.navbar,
+.navbar-default {
+    background: linear-gradient(180deg, #0a0e07 0%, #060904 100%) !important;
+    border-bottom: 1px solid #2c3a20 !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.55) !important;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar a {
+    color: #8a9a64 !important;
+    font-family: 'Special Elite', 'Courier New', monospace !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    transition: color 0.3s ease !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar a:hover {
+    color: #c2d47a !important;
+    text-shadow: 0 0 8px rgba(156, 207, 77, 0.3) !important;
+}
+
+/* ============ BREADCRUMB ============ */
+.breadcrumb {
+    background: rgba(7, 11, 5, 0.88) !important;
+    border: 1px solid rgba(78, 96, 48, 0.20) !important;
+    border-radius: 0 !important;
+    color: #6e7058 !important;
+    font-family: 'Special Elite', 'Courier New', monospace !important;
+    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.breadcrumb a { color: #c2632a !important; }
+.breadcrumb a:hover { color: #e08a40 !important; }
+
+/* ============ SIDEBAR / PANELS ============ */
+.sidebar,
+.panel,
+.panel-default {
+    background: rgba(11, 17, 10, 0.92) !important;
+    border: 1px solid rgba(78, 96, 48, 0.30) !important;
+    border-radius: 0 !important;
+    color: #c6c1a4 !important;
+    box-shadow: none !important;
+}
+
+.panel-heading,
+.panel-default > .panel-heading {
+    background: linear-gradient(180deg, rgba(50, 64, 32, 0.70) 0%, rgba(18, 26, 14, 0.90) 100%) !important;
+    border-bottom: 1px solid rgba(110, 130, 64, 0.40) !important;
+    border-radius: 0 !important;
+    color: #a7ba62 !important;
+    font-family: 'Black Ops One', 'Special Elite', sans-serif !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.panel-body {
+    background: transparent !important;
+    color: #c6c1a4 !important;
+    box-shadow: none !important;
+}
+
+/* ============ SIDEBAR WIDGET RIM CLEAN-UP ============ */
+.col-md-3 .panel,
+.col-md-3 .panel-default,
+.col-md-3 .panel-heading,
+.col-md-3 .panel-body,
+.col-md-3 .panel-footer,
+.col-md-3 .well,
+.col-md-3 .thumbnail,
+.col-md-3 fieldset,
+.col-md-3 legend,
+.col-md-3 .list-group,
+.col-md-3 .list-group-item,
+.sidebar .panel, .sidebar .well, .sidebar .thumbnail,
+aside .panel, aside .well, aside .thumbnail {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    outline: none !important;
+}
+
+/* Force any leftover Bootstrap light borders back to olive so
+   nothing reads as gray/white. */
+.col-md-3 .panel,
+.col-md-3 .panel-default,
+.col-md-3 .well,
+.col-md-3 fieldset {
+    border-color: rgba(78, 96, 48, 0.34) !important;
+}
+
+/* ============ TABLES ============ */
+.table,
+table { color: #c6c1a4 !important; }
+
+.table > thead > tr > th,
+.table > tbody > tr > td,
+.table td, .table th,
+td, th {
+    border-color: rgba(78, 96, 48, 0.18) !important;
+    color: #c6c1a4 !important;
+    background: transparent !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd)  { background-color: rgba(50, 64, 32, 0.16) !important; }
+.table-striped > tbody > tr:nth-of-type(even) { background-color: rgba(7, 11, 5, 0.30) !important; }
+
+/* ============ LINKS ============ */
+a:link, a {
+    color: #c2632a !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+a:visited { color: #9a4e20 !important; }
+
+a:hover {
+    color: #e08a40 !important;
+    text-shadow: 0 0 6px rgba(224, 138, 64, 0.3) !important;
+    text-decoration: none !important;
+}
+
+/* ============ PROGRESS BARS ============ */
+.progress {
+    background-color: rgba(6, 9, 4, 0.88) !important;
+    border: 1px solid rgba(78, 96, 48, 0.30) !important;
+    border-radius: 0 !important;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+    height: 18px !important;
+}
+
+.progress-bar,
+.progress-bar-success {
+    background: linear-gradient(90deg, #2c3a20 0%, #6e8240 50%, #9ccf4d 100%) !important;
+    box-shadow: 0 0 8px rgba(156, 207, 77, 0.3) !important;
+    border-radius: 0 !important;
+}
+
+.progress-bar-info    { background: linear-gradient(90deg, #3a4a28 0%, #8aa04e 100%) !important; }
+.progress-bar-warning { background: linear-gradient(90deg, #6e3a18 0%, #c2632a 100%) !important; }
+.progress-bar-danger  { background: linear-gradient(90deg, #4a1410 0%, #a03020 100%) !important; }
+
+/* ============ BUTTONS ============ */
+.btn, .btn-default, .btn-primary, .btn-success,
+.btn-info, .btn-warning, .btn-danger,
+.btn-sm, .btn-xs, .btn-lg,
+input[type="submit"], input[type="button"], button {
+    background: linear-gradient(180deg, #16200f 0%, #0a0f07 100%) !important;
+    border: 1px solid rgba(110, 130, 64, 0.45) !important;
+    border-radius: 0 !important;
+    color: #a7ba62 !important;
+    font-family: 'Special Elite', 'Courier New', monospace !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn:hover, .btn-default:hover, .btn-primary:hover, .btn-success:hover,
+input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+    background: linear-gradient(180deg, #243415 0%, #16200f 100%) !important;
+    border-color: rgba(156, 207, 77, 0.55) !important;
+    color: #c2d47a !important;
+    box-shadow: 0 0 10px rgba(138, 160, 78, 0.3) !important;
+}
+
+/* ============ CHATBOX (sidebar chat header + iframe wrapper) ============ */
+h3[style*="position: relative"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    padding: 8px 12px !important;
+    margin: 14px 0 0 !important;
+    background: linear-gradient(180deg, rgba(40, 52, 26, 0.96), rgba(14, 20, 10, 0.99)) !important;
+    border: none !important;
+    font-family: 'Black Ops One', sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+    color: #a7ba62 !important;
+    text-transform: uppercase !important;
+    line-height: 1.4 !important;
+    overflow: visible !important;
+}
+
+h3[style*="position: relative"] > div[style*="display: inline-block"] {
+    margin: 0 0 0 auto !important;
+    flex-shrink: 0 !important;
+    line-height: inherit !important;
+}
+
+h3[style*="position: relative"] > div[style*="position: absolute"] {
+    position: static !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    flex-shrink: 0 !important;
+}
+
+#btnToggleSidebarChat {
+    background: rgba(28, 38, 18, 0.92) !important;
+    border: 1px solid rgba(110, 130, 64, 0.50) !important;
+    color: #a7ba62 !important;
+    font-family: 'Special Elite', monospace !important;
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+    padding: 3px 8px !important;
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+    transition: all 0.3s ease !important;
+}
+
+#btnToggleSidebarChat:hover {
+    background: rgba(44, 58, 28, 0.96) !important;
+    border-color: rgba(156, 207, 77, 0.55) !important;
+    color: #c2d47a !important;
+    box-shadow: 0 0 6px rgba(138, 160, 78, 0.3) !important;
+}
+
+h3 a[href="./chat.php"],
+h3 a[href*="chat.php"] {
+    color: #c2632a !important;
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+    font-family: 'Special Elite', monospace !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    padding: 3px 7px !important;
+    border: 1px solid rgba(110, 130, 64, 0.40) !important;
+    background: rgba(28, 38, 18, 0.7) !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease !important;
+}
+
+h3 a[href="./chat.php"]:hover,
+h3 a[href*="chat.php"]:hover {
+    color: #e08a40 !important;
+    border-color: rgba(156, 207, 77, 0.55) !important;
+    background: rgba(44, 58, 28, 0.9) !important;
+    text-shadow: none !important;
+}
+
+#fraSidebarChat {
+    background: rgba(6, 9, 4, 0.92) !important;
+    border: none !important;
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+#fraSidebarChat iframe {
+    background: rgba(6, 9, 4, 0.92) !important;
+    border: none !important;
+    outline: none !important;
+    width: 100% !important;
+    display: block !important;
+    box-shadow: none !important;
+}
+
+#fraSidebarChat.hidden { display: none !important; }
+
+/* ============ CHAT IFRAME CONTENT ============ */
+html.nolayout,
+html.nolayout body,
+body.nolayout {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: rgba(6, 9, 4, 0.96) !important;
+    box-shadow: none !important;
+}
+
+.s-chat-sidebar,
+#fra_chatContainer,
+#fra_chatContainer.s-chat-sidebar {
+    background: rgba(6, 9, 4, 0.96) !important;
+    color: #84846a !important;
+    font-family: 'Crimson Text', Georgia, serif !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+.channelMenu {
+    background: linear-gradient(180deg, rgba(28, 38, 18, 0.94), rgba(12, 16, 8, 0.96)) !important;
+    border-bottom: 1px solid rgba(110, 130, 64, 0.45) !important;
+    color: #a7ba62 !important;
+}
+
+.chatMenu-container {
+    background: rgba(11, 17, 10, 0.96) !important;
+    border: 1px solid rgba(110, 130, 64, 0.45) !important;
+    color: #c6c1a4 !important;
+}
+
+.channelSwitcher,
+.chatMenu-option {
+    background: rgba(28, 38, 18, 0.85) !important;
+    border: 1px solid rgba(110, 130, 64, 0.40) !important;
+    color: #8a9a64 !important;
+    font-family: 'Special Elite', monospace !important;
+    text-transform: uppercase !important;
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+    text-shadow: none !important;
+    padding: 4px 8px !important;
+    border-radius: 0 !important;
+}
+
+.channelSwitcher.active {
+    background: linear-gradient(180deg, rgba(110, 130, 64, 0.40), rgba(78, 96, 48, 0.45)) !important;
+    color: #c2d47a !important;
+    border-color: rgba(156, 207, 77, 0.55) !important;
+}
+
+.channelSwitcher:hover,
+.chatMenu-option:hover {
+    background: rgba(44, 58, 28, 0.94) !important;
+    color: #a7ba62 !important;
+    border-color: rgba(156, 207, 77, 0.55) !important;
+}
+
+#btnLoadNewMessages {
+    background: rgba(50, 64, 32, 0.94) !important;
+    border: 1px solid rgba(110, 130, 64, 0.55) !important;
+    color: #a7ba62 !important;
+    font-family: 'Special Elite', monospace !important;
+    text-transform: uppercase !important;
+}
+
+#chatMessagePinned,
+.s-chat-message__pinned {
+    background: linear-gradient(180deg, rgba(50, 64, 32, 0.92), rgba(18, 26, 14, 0.96)) !important;
+    border: 1px solid rgba(110, 130, 64, 0.48) !important;
+    color: #c6c1a4 !important;
+    text-shadow: none !important;
+    padding: 6px 10px !important;
+    font-family: 'Crimson Text', serif !important;
+}
+
+#chatMessagePinned a,
+.s-chat-message__pinned a {
+    color: #c2632a !important;
+    text-shadow: none !important;
+}
+
+#chatMessagePinned a:hover,
+.s-chat-message__pinned a:hover {
+    color: #e08a40 !important;
+}
+
+#chatMessageList {
+    background: transparent !important;
+    color: #84846a !important;
+}
+
+.s-chat-message {
+    background: rgba(11, 17, 10, 0.88) !important;
+    border-bottom: 1px solid rgba(78, 96, 48, 0.18) !important;
+    color: #84846a !important;
+    text-shadow: none !important;
+    padding: 6px 30px 8px 10px !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+.s-chat-message > div:first-child {
+    display: block !important;
+    margin-bottom: 2px !important;
+}
+
+.s-chat-message:nth-of-type(odd)  { background: rgba(14, 20, 10, 0.92) !important; }
+.s-chat-message:nth-of-type(even) { background: rgba(8, 12, 6, 0.82) !important; }
+
+.s-chat-message:hover { background: rgba(28, 38, 18, 0.94) !important; }
+
+.s-chat__username,
+.s-chat-message a.s-chat__username {
+    color: #c2782e !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
+}
+
+.s-chat__username:hover {
+    color: #e08a40 !important;
+    text-shadow: none !important;
+}
+
+.s-chat__username[data-type="donator"] { color: #d4a040 !important; }
+.s-chat__username[data-type="new"]     { color: #9a9a78 !important; }
+
+.s-chat__username[data-type="staff"],
+.s-chat__username[data-type="moderator"] { color: #c2d47a !important; }
+
+.s-chat-message_content,
+.s-chat-message_content * {
+    color: #a8a486 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+}
+
+.s-chat-message_content {
+    display: block !important;
+    margin: 2px 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.45 !important;
+}
+
+.s-chat-message_content b { color: #a7ba62 !important; }
+
+.s-chat-message_content a.s-chat__username {
+    color: #c2782e !important;
+    background: transparent !important;
+}
+
+.s-chat-message_timestamp {
+    display: block !important;
+    color: #565844 !important;
+    font-size: 10px !important;
+    font-style: italic !important;
+    font-family: 'Crimson Text', serif !important;
+    text-shadow: none !important;
+    margin-top: 3px !important;
+    line-height: 1.2 !important;
+    clear: both !important;
+}
+
+.s-chat-message_menu {
+    position: absolute !important;
+    top: 6px !important;
+    right: 6px !important;
+    background: rgba(28, 38, 18, 0.55) !important;
+    border: 1px solid rgba(78, 96, 48, 0.34) !important;
+    opacity: 0.55 !important;
+    transition: all 0.3s ease !important;
+}
+
+.s-chat-message_menu:hover {
+    opacity: 1 !important;
+    background: rgba(44, 58, 28, 0.92) !important;
+    border-color: rgba(156, 207, 77, 0.55) !important;
+}
+
+.s-chat-message__icon {
+    filter: sepia(30%) hue-rotate(45deg) saturate(70%) brightness(85%) !important;
+    opacity: 0.85 !important;
+}
+
+#txtChatInput {
+    background: rgba(6, 9, 4, 0.96) !important;
+    border: 1px solid rgba(110, 130, 64, 0.50) !important;
+    color: #c6c1a4 !important;
+    font-family: 'Crimson Text', serif !important;
+    padding: 6px 8px !important;
+    border-radius: 0 !important;
+}
+
+#txtChatInput:focus {
+    border-color: rgba(156, 207, 77, 0.65) !important;
+    box-shadow: 0 0 8px rgba(138, 160, 78, 0.25) !important;
+    outline: none !important;
+}
+
+#txtChatInput::placeholder {
+    color: #565844 !important;
+    font-style: italic !important;
+}
+
+#txtChatContainer a[href*="code.php"] {
+    color: #84846a !important;
+    font-family: 'Special Elite', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
+}
+
+#txtChatContainer a[href*="code.php"]:hover {
+    color: #a7ba62 !important;
+    text-shadow: none !important;
+}
+
+#lblCharacterCounter {
+    color: #84846a !important;
+    font-family: 'Special Elite', monospace !important;
+    font-size: 10px !important;
+    text-shadow: none !important;
+}
+
+#lblCharacterCounter span { color: #c2632a !important; }
+
+#btnChatSend {
+    background: linear-gradient(180deg, #243415 0%, #16200f 100%) !important;
+    border: 1px solid rgba(110, 130, 64, 0.55) !important;
+    color: #a7ba62 !important;
+    font-family: 'Black Ops One', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-size: 11px !important;
+    padding: 6px 16px !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+#btnChatSend:hover {
+    background: linear-gradient(180deg, #324a1c 0%, #243415 100%) !important;
+    border-color: rgba(156, 207, 77, 0.65) !important;
+    color: #c2d47a !important;
+    box-shadow: 0 0 10px rgba(138, 160, 78, 0.32) !important;
+}
+
+.emoteInput {
+    background: rgba(28, 38, 18, 0.88) !important;
+    border: 1px solid rgba(110, 130, 64, 0.45) !important;
+    color: #8a9a64 !important;
+}
+
+.emoteList {
+    background: rgba(6, 9, 4, 0.97) !important;
+    border: 1px solid rgba(110, 130, 64, 0.50) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55) !important;
+}
+
+.alert.achievement,
+.alert-warning.achievement {
+    background: linear-gradient(180deg, rgba(50, 64, 32, 0.92), rgba(18, 26, 14, 0.96)) !important;
+    border: 1px solid rgba(110, 130, 64, 0.55) !important;
+    color: #a7ba62 !important;
+    text-shadow: none !important;
+}
+
+.alert.achievement a,
+.alert-warning.achievement a {
+    color: #c2d47a !important;
+    text-shadow: none !important;
+}
+
+/* ============ LEGACY /chat.php PAGE ============ */
+.chat_light,
+#chatMessages .chat_light {
+    background: rgba(8, 12, 6, 0.82) !important;
+    border-color: rgba(78, 96, 48, 0.14) !important;
+    color: #84846a !important;
+}
+
+.chat_dark,
+#chatMessages .chat_dark {
+    background: rgba(12, 18, 9, 0.90) !important;
+    border-color: rgba(78, 96, 48, 0.14) !important;
+    color: #84846a !important;
+}
+
+.chat_light, .chat_light *,
+.chat_dark, .chat_dark * {
+    text-shadow: none !important;
+}
+
+.chat_light a, .chat_dark a {
+    color: #c2782e !important;
+    text-shadow: none !important;
+}
+
+.chat_light a:hover, .chat_dark a:hover { color: #e08a40 !important; }
+
+/* ============ INPUT FIELDS ============ */
+input[type="text"], input[type="number"],
+input[type="password"], input[type="email"],
+select, textarea, .form-control {
+    background: rgba(6, 9, 4, 0.92) !important;
+    border: 1px solid rgba(78, 96, 48, 0.32) !important;
+    border-radius: 0 !important;
+    color: #c6c1a4 !important;
+    font-family: 'Crimson Text', serif !important;
+}
+
+input:focus, select:focus, textarea:focus, .form-control:focus {
+    border-color: rgba(156, 207, 77, 0.45) !important;
+    box-shadow: 0 0 8px rgba(138, 160, 78, 0.22) !important;
+    outline: none !important;
+}
+
+/* ============ WELLS / ALERTS ============ */
+.well {
+    background: rgba(8, 12, 6, 0.75) !important;
+    border: 1px solid rgba(78, 96, 48, 0.26) !important;
+    border-radius: 0 !important;
+    color: #c6c1a4 !important;
+}
+
+.alert {
+    background: rgba(50, 64, 32, 0.45) !important;
+    border: 1px solid rgba(110, 130, 64, 0.40) !important;
+    border-radius: 0 !important;
+    color: #c6c1a4 !important;
+}
+
+/* ============ TERRITORY / CAVE THUMBNAILS ============
+   Cave/den navigation tiles. Only recolored — the stock images are
+   left alone on purpose (no placeholder replacement system here). */
+.thumbnail,
+.col-xs-4 > a,
+.col-xs-3 > a,
+.col-md-4 > a,
+.col-md-3 > a,
+a[href*="cave.php"],
+a[href*="unsorted.php"],
+a[href*="pride.php"],
+a[href*="territory.php"] .thumbnail {
+    background: linear-gradient(180deg, rgba(46, 60, 28, 0.72) 0%, rgba(14, 20, 10, 0.94) 100%) !important;
+    border: 1px solid #3a4a28 !important;
+    border-radius: 0 !important;
+    padding: 6px !important;
+    margin-bottom: 12px !important;
+    box-shadow: inset 0 0 22px rgba(0, 0, 0, 0.20), 0 2px 14px rgba(138, 160, 78, 0.08) !important;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease !important;
+    color: #c6c1a4 !important;
+    display: block !important;
+    text-decoration: none !important;
+}
+
+.thumbnail:hover,
+.col-xs-4 > a:hover,
+.col-xs-3 > a:hover,
+.col-md-4 > a:hover,
+.col-md-3 > a:hover {
+    border-color: #8aa04e !important;
+    box-shadow: inset 0 0 22px rgba(0, 0, 0, 0.20), 0 0 22px rgba(156, 207, 77, 0.20) !important;
+    color: #c2d47a !important;
+}
+
+.thumbnail .caption,
+.thumbnail h3,
+.thumbnail h4,
+.thumbnail p,
+.thumbnail .caption h3,
+.caption {
+    background: rgba(6, 9, 4, 0.85) !important;
+    color: #a7ba62 !important;
+    font-family: 'Special Elite', monospace !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    padding: 8px 6px !important;
+    margin: 6px 0 0 !important;
+    border-top: 1px solid rgba(110, 130, 64, 0.32) !important;
+    border-radius: 0 !important;
+}
+
+.thumbnail .caption a,
+.caption a { color: #a7ba62 !important; }
+.thumbnail .caption a:hover,
+.caption a:hover { color: #c2d47a !important; }
+
+.thumbnail > img,
+.thumbnail a > img,
+.thumbnail .caption + img {
+    border: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    box-shadow: none !important;
+}
+
+.well > a,
+.list-group-item {
+    background: linear-gradient(180deg, rgba(46, 60, 28, 0.72) 0%, rgba(14, 20, 10, 0.94) 100%) !important;
+    border: 1px solid #3a4a28 !important;
+    color: #a7ba62 !important;
+    font-family: 'Special Elite', monospace !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    border-radius: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.list-group-item:hover {
+    border-color: #8aa04e !important;
+    background: linear-gradient(180deg, rgba(62, 80, 38, 0.80) 0%, rgba(20, 28, 14, 0.96) 100%) !important;
+    color: #c2d47a !important;
+}
+
+/* ============ COMMENT BOX ============ */
+form[action*="comment"],
+.comment-form,
+.well.comment-section {
+    background: rgba(11, 17, 10, 0.88) !important;
+    border: 1px solid rgba(78, 96, 48, 0.30) !important;
+    border-radius: 0 !important;
+    padding: 14px 16px !important;
+}
+
+/* ============ HEADINGS ============ */
+h1, h2, h3, h4, h5, h6 {
+    color: #a7ba62 !important;
+    font-family: 'Black Ops One', 'Special Elite', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
+::-webkit-scrollbar-track { background: #060904 !important; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4e6030 0%, #1c260f 100%) !important;
+    border: 1px solid rgba(110, 130, 64, 0.3) !important;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #6e8240 0%, #3a4a28 100%) !important; }
+
+/* ============================================================
+   TERRITORY DESCRIPTION — .nub-* classes
+   the mangrove dark · camouflage dossier
+   ============================================================ */
+
+.nub-territory {
+    width: 700px;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 0 0 26px;
+    position: relative;
+    font-family: 'Crimson Text', Georgia, serif;
+    color: #c6c1a4;
+    line-height: 1.65;
+    background:
+        radial-gradient(ellipse 320px 200px at 12% 8%,  rgba(70, 88, 46, 0.16), transparent 70%),
+        radial-gradient(ellipse 280px 180px at 88% 30%, rgba(46, 60, 30, 0.20), transparent 70%),
+        radial-gradient(ellipse 340px 220px at 30% 90%, rgba(58, 74, 40, 0.14), transparent 70%),
+        radial-gradient(ellipse 240px 160px at 75% 70%, rgba(194, 99, 42, 0.05), transparent 70%),
+        linear-gradient(180deg, rgba(14, 20, 10, 0.85) 0%, rgba(7, 10, 5, 0.95) 100%) !important;
+    border: 1px solid #3a4a28 !important;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(110, 130, 64, 0.07) !important;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Faint scanline overlay across the whole territory — military
+   monitor feel. Sits on top but never blocks clicks. */
+.nub-territory::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.09) 0px,
+        rgba(0, 0, 0, 0.09) 1px,
+        transparent 1px,
+        transparent 4px);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* ── KILL LIODEN'S INJECTED <br> TAGS ──
+   Lioden converts every newline in the pasted snippet into a <br>,
+   which wrecks flex rows and spacing. Hide them all inside the
+   territory, then re-enable them ONLY inside text blocks where a
+   manual line break is wanted. */
+.nub-territory br { display: none !important; }
+.nub-text br,
+.nub-subtitle br,
+.nub-note br { display: inline !important; }
+
+.nub-territory p:empty {
+    display: none !important;
+    margin: 0 !important;
+    height: 0 !important;
+}
+
+/* ── WARNING TAPE STRIP across the top ── */
+.nub-topstrip {
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(110, 130, 64, 0.30) 0px,
+        rgba(110, 130, 64, 0.30) 14px,
+        rgba(6, 9, 4, 0.85) 14px,
+        rgba(6, 9, 4, 0.85) 28px);
+    border-bottom: 1px solid #4e6030;
+    padding: 7px 10px;
+    text-align: center;
+}
+
+.nub-strip-txt {
+    display: inline-block;
+    background: rgba(6, 9, 4, 0.92);
+    border: 1px solid rgba(110, 130, 64, 0.45);
+    padding: 2px 14px;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a7ba62;
+}
+
+/* ── TITLE BLOCK ── */
+.nub-title-block {
+    text-align: center;
+    padding: 18px 24px 16px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(78, 96, 48, 0.40);
+    position: relative;
+}
+
+.nub-overline {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #6e7058;
+    margin-bottom: 8px;
+}
+
+.nub-title {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 34px;
+    color: #c2d47a;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding: 4px 0 2px;
+    text-shadow:
+        0 0 26px rgba(156, 207, 77, 0.40),
+        0 0 60px rgba(194, 99, 42, 0.22),
+        0 2px 4px rgba(0, 0, 0, 0.85);
+    animation: nub-flicker 7s linear infinite;
+}
+
+/* Occasional faint flicker — just enough to feel wrong. */
+@keyframes nub-flicker {
+    0%, 86%, 92%, 100% { opacity: 1; }
+    88%               { opacity: 0.82; }
+    90%               { opacity: 0.95; }
+    91%               { opacity: 0.78; }
+}
+
+.nub-subtitle {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: #9a9a78;
+    font-size: 15.5px;
+    line-height: 1.9;
+    letter-spacing: 1px;
+    margin: 6px auto 2px;
+    max-width: 520px;
+}
+
+.nub-accent { color: #c2632a; }
+
+/* ── AVATAR RIG — round king portrait + animations ── */
+.nub-avatar-rig {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 16px auto 10px;
+}
+
+.nub-avatar {
+    position: absolute !important;
+    top: 25px; left: 25px;
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    border: 3px solid #4e6030 !important;
+    outline: 1px solid rgba(194, 99, 42, 0.45);
+    outline-offset: 4px;
+    box-shadow:
+        0 0 26px rgba(156, 207, 77, 0.30),
+        0 0 60px rgba(194, 99, 42, 0.14),
+        inset 0 0 18px rgba(0, 0, 0, 0.4) !important;
+    object-fit: cover !important;
+    display: block !important;
+    background: radial-gradient(ellipse at 50% 40%, rgba(70, 88, 46, 0.5), #0a0f07 75%);
+    z-index: 3;
+    animation: nub-breathe 5s ease-in-out infinite;
+}
+
+@keyframes nub-breathe {
+    0%, 100% { box-shadow: 0 0 22px rgba(156, 207, 77, 0.22), 0 0 50px rgba(194, 99, 42, 0.10), inset 0 0 18px rgba(0, 0, 0, 0.4); }
+    50%      { box-shadow: 0 0 34px rgba(156, 207, 77, 0.42), 0 0 70px rgba(194, 99, 42, 0.20), inset 0 0 18px rgba(0, 0, 0, 0.4); }
+}
+
+/* Rotating radar sweep behind the portrait */
+.nub-radar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(156, 207, 77, 0.30) 0deg,
+        rgba(156, 207, 77, 0.10) 38deg,
+        transparent 70deg,
+        transparent 360deg);
+    animation: nub-spin 5s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes nub-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Dashed targeting ring, counter-rotating slowly */
+.nub-avatar-rig::before {
+    content: "";
+    position: absolute;
+    top: 8px; left: 8px;
+    width: 184px;
+    height: 184px;
+    border: 1px dashed rgba(138, 160, 78, 0.55);
+    border-radius: 50%;
+    animation: nub-spin-rev 26s linear infinite;
+    z-index: 2;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+@keyframes nub-spin-rev {
+    from { transform: rotate(360deg); }
+    to   { transform: rotate(0deg); }
+}
+
+/* Crosshair ticks on the targeting ring */
+.nub-avatar-rig::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background:
+        linear-gradient(0deg,   transparent 47%, rgba(194, 99, 42, 0.7) 47%, rgba(194, 99, 42, 0.7) 53%, transparent 53%) 50% 0 / 2px 10px no-repeat,
+        linear-gradient(0deg,   transparent 47%, rgba(194, 99, 42, 0.7) 47%, rgba(194, 99, 42, 0.7) 53%, transparent 53%) 50% 100% / 2px 10px no-repeat,
+        linear-gradient(90deg,  transparent 47%, rgba(194, 99, 42, 0.7) 47%, rgba(194, 99, 42, 0.7) 53%, transparent 53%) 0 50% / 10px 2px no-repeat,
+        linear-gradient(90deg,  transparent 47%, rgba(194, 99, 42, 0.7) 47%, rgba(194, 99, 42, 0.7) 53%, transparent 53%) 100% 50% / 10px 2px no-repeat;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Sonar ping rings expanding outward */
+.nub-ping {
+    position: absolute;
+    top: 25px; left: 25px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(156, 207, 77, 0.55);
+    border-radius: 50%;
+    opacity: 0;
+    animation: nub-ping 4.2s ease-out infinite;
+    z-index: 1;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.nub-ping-2 { animation-delay: 2.1s; }
+
+@keyframes nub-ping {
+    0%   { transform: scale(0.95); opacity: 0.65; }
+    70%  { transform: scale(1.38); opacity: 0; }
+    100% { transform: scale(1.38); opacity: 0; }
+}
+
+/* Swamp lights drifting around the portrait */
+.nub-ff {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #9ccf4d;
+    box-shadow: 0 0 8px rgba(156, 207, 77, 0.9), 0 0 16px rgba(156, 207, 77, 0.5);
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.nub-ff-1 { top: 30px;  left: 18px;  animation: nub-drift-a 7s  ease-in-out infinite; }
+.nub-ff-2 { top: 140px; left: 178px; animation: nub-drift-b 9s  ease-in-out infinite 1.2s; }
+.nub-ff-3 { top: 168px; left: 48px;  animation: nub-drift-a 8s  ease-in-out infinite 3s; }
+.nub-ff-4 { top: 14px;  left: 142px; animation: nub-drift-b 11s ease-in-out infinite 2s;
+            background: #e08a40; box-shadow: 0 0 8px rgba(224, 138, 64, 0.9), 0 0 16px rgba(224, 138, 64, 0.5); }
+
+@keyframes nub-drift-a {
+    0%, 100% { transform: translate(0, 0);      opacity: 0; }
+    15%      { opacity: 0.9; }
+    50%      { transform: translate(14px, -22px); opacity: 0.5; }
+    80%      { opacity: 0.85; }
+    95%      { transform: translate(-6px, 8px);  opacity: 0; }
+}
+
+@keyframes nub-drift-b {
+    0%, 100% { transform: translate(0, 0);       opacity: 0; }
+    20%      { opacity: 0.85; }
+    55%      { transform: translate(-18px, 14px); opacity: 0.45; }
+    85%      { opacity: 0.8; }
+    97%      { transform: translate(8px, -10px);  opacity: 0; }
+}
+
+/* ── DOG-TAG ROW ── */
+.nub-tagrow {
+    margin: 10px auto 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+.nub-tag {
+    display: inline-block;
+    font-family: 'Special Elite', monospace;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a8a486;
+    background: rgba(14, 20, 10, 0.92);
+    border: 1px solid rgba(110, 130, 64, 0.45);
+    padding: 4px 12px;
+    position: relative;
+}
+
+.nub-tag-hot {
+    color: #c2d47a;
+    border-color: rgba(156, 207, 77, 0.55);
+    box-shadow: 0 0 10px rgba(156, 207, 77, 0.14);
+}
+
+.nub-tag-blood {
+    color: #d4683a;
+    border-color: rgba(160, 48, 32, 0.65);
+    box-shadow: 0 0 10px rgba(160, 48, 32, 0.18);
+}
+
+/* ── SECTOR DIVIDERS ── */
+.nub-divider {
+    width: calc(100% - 48px);
+    margin: 18px auto;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(110, 130, 64, 0.50) 15%,
+        rgba(156, 207, 77, 0.25) 50%,
+        rgba(110, 130, 64, 0.50) 85%,
+        transparent 100%);
+    position: relative;
+    text-align: center;
+}
+
+.nub-divider-label {
+    position: relative;
+    top: -10px;
+    display: inline-block;
+    background: #0a0f07;
+    border: 1px solid rgba(110, 130, 64, 0.40);
+    padding: 1px 14px;
+    font-family: 'Special Elite', monospace;
+    font-size: 9.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a9a64;
+}
+
+/* ── BOXES — camo plating ── */
+.nub-box {
+    background:
+        radial-gradient(ellipse 110px 60px at 18% 22%, rgba(70, 88, 46, 0.22), transparent 70%),
+        radial-gradient(ellipse 130px 70px at 78% 64%, rgba(40, 52, 26, 0.30), transparent 70%),
+        radial-gradient(ellipse 90px 55px at 45% 88%,  rgba(58, 74, 40, 0.18), transparent 70%),
+        radial-gradient(ellipse 70px 45px at 90% 12%,  rgba(30, 40, 20, 0.30), transparent 70%),
+        linear-gradient(180deg, rgba(18, 26, 14, 0.92) 0%, rgba(9, 13, 7, 0.96) 100%) !important;
+    border: 1px solid #3a4a28 !important;
+    padding: 16px 18px 18px;
+    box-shadow: inset 0 0 26px rgba(0, 0, 0, 0.26), 0 2px 18px rgba(110, 130, 64, 0.08) !important;
+    position: relative;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    box-sizing: border-box;
+}
+
+.nub-box:hover {
+    border-color: #6e8240 !important;
+    box-shadow: inset 0 0 26px rgba(0, 0, 0, 0.26), 0 0 24px rgba(156, 207, 77, 0.16) !important;
+}
+
+/* Stencil corner brackets — add 4 corner spans inside each box */
+.nub-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(156, 207, 77, 0.45);
+    pointer-events: none;
+}
+
+.nub-c-tl { top: 4px;    left: 4px;   border-right: none;  border-bottom: none; }
+.nub-c-tr { top: 4px;    right: 4px;  border-left: none;   border-bottom: none; }
+.nub-c-bl { bottom: 4px; left: 4px;   border-right: none;  border-top: none; }
+.nub-c-br { bottom: 4px; right: 4px;  border-left: none;   border-top: none; }
+
+.nub-box:hover .nub-corner { border-color: rgba(156, 207, 77, 0.85); }
+
+/* Box layout variants */
+.nub-box-full {
+    width: calc(100% - 48px);
+    margin: 4px auto 6px;
+    min-height: 80px;
+}
+
+.nub-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    margin: 6px 24px;
+    flex-wrap: nowrap !important;
+}
+
+.nub-box-half {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* stop the browser from re-scrolling the box while gallery
+       images are still loading in */
+    overflow-anchor: none;
+}
+
+/* Box headers */
+.nub-box-header {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 12.5px;
+    color: #a7ba62;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 0 0 12px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid rgba(110, 130, 64, 0.45);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.nub-box-header::before { content: '▸'; margin-right: 12px; color: #c2632a; font-size: 10px; }
+.nub-box-header::after  { content: '◂'; margin-left:  12px; color: #c2632a; font-size: 10px; }
+
+/* Blinking status square usable inside headers/text */
+.nub-blink {
+    display: inline-block;
+    color: #9ccf4d;
+    animation: nub-blink 1.6s steps(2, start) infinite;
+}
+
+@keyframes nub-blink { to { visibility: hidden; } }
+
+/* ── TEXT STYLES ── */
+.nub-text { font-size: 14px; color: #c6c1a4; line-height: 1.75; }
+.nub-text b          { color: #ddd8ba; }
+.nub-text-sm         { font-size: 12px; color: #9a9a78; line-height: 1.65; }
+.nub-text-italic     { font-style: italic; color: #9a9a78; }
+.nub-text-accent     { color: #c2632a; font-weight: 600; }
+.nub-text-toxic      { color: #9ccf4d; }
+.nub-text-muted      { color: #6e7058; font-size: 12px; }
+.nub-text-center     { text-align: center; }
+
+.nub-key {
+    font-family: 'Special Elite', monospace;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #84846a;
+}
+
+/* ── DOSSIER (player box) ── */
+.nub-box-dossier { padding-top: 20px; }
+
+.nub-stamp {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(194, 80, 42, 0.85);
+    border: 2px solid rgba(194, 80, 42, 0.65);
+    padding: 3px 10px;
+    transform: rotate(7deg);
+    box-shadow: inset 0 0 10px rgba(160, 48, 32, 0.18);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.nub-dossier-grid {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-top: 4px;
+}
+
+.nub-dossier-col { flex: 1 1 0; min-width: 0; }
+
+.nub-col-title {
+    font-family: 'Special Elite', monospace;
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a9a64;
+    border-bottom: 1px dashed rgba(110, 130, 64, 0.45);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.nub-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(78, 96, 48, 0.22);
+}
+
+.nub-info-row:last-child { border-bottom: none; }
+
+.nub-info-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    color: #84846a;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.nub-info-value { font-size: 13.5px; color: #c6c1a4; text-align: right; }
+
+/* Interests list — class lives on the <li> spans, the bare <ul>
+   is targeted through its classed parent (Lioden strips ul classes). */
+.nub-dossier-col ul,
+.nub-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nub-li {
+    display: block;
+    padding: 4px 0 4px 18px;
+    position: relative;
+    font-size: 13.5px;
+    color: #c6c1a4;
+    border-bottom: 1px solid rgba(78, 96, 48, 0.14);
+}
+
+.nub-li:last-child { border-bottom: none; }
+
+.nub-li::before {
+    content: "▸";
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    color: #c2632a;
+    font-size: 10px;
+}
+
+/* Field note strip at the bottom of the dossier */
+.nub-note {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(6, 9, 4, 0.66);
+    border-left: 3px solid rgba(194, 99, 42, 0.65);
+    font-size: 12.5px;
+    font-style: italic;
+    color: #9a9a78;
+    line-height: 1.7;
+}
+
+.nub-note b { color: #c2d47a; font-style: normal; }
+
+/* ── COMMISSION STATUS BOX ── */
+.nub-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 6px 0 12px;
+    padding: 10px 8px;
+    background: rgba(6, 9, 4, 0.72);
+    border: 1px solid rgba(110, 130, 64, 0.35);
+}
+
+.nub-lamp {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #9ccf4d;
+    box-shadow: 0 0 10px rgba(156, 207, 77, 0.9), 0 0 22px rgba(156, 207, 77, 0.45);
+    animation: nub-lamp-pulse 2.2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes nub-lamp-pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.45; }
+}
+
+.nub-lamp-closed {
+    background: #a03020;
+    box-shadow: 0 0 10px rgba(160, 48, 32, 0.9), 0 0 22px rgba(160, 48, 32, 0.45);
+}
+
+.nub-status-word {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 17px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c2d47a;
+}
+
+.nub-status-row:has(.nub-lamp-closed) .nub-status-word { color: #d4683a; }
+
+/* Slot pips */
+.nub-slots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 4px 0 12px;
+}
+
+.nub-slots-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #84846a;
+    margin-right: 4px;
+}
+
+.nub-pip {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border: 1px solid rgba(156, 207, 77, 0.55);
+    background: transparent;
+    transform: rotate(45deg);
+}
+
+.nub-pip-taken {
+    background: #c2632a;
+    border-color: rgba(224, 138, 64, 0.8);
+    box-shadow: 0 0 7px rgba(194, 99, 42, 0.55);
+}
+
+/* Forum thread button — the class sits on a <span> INSIDE the <a>
+   because Lioden strips classes from <a> tags. */
+.nub-btn {
+    display: block;
+    margin: 14px auto 2px;
+    padding: 10px 14px;
+    text-align: center;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #c2d47a !important;
+    background:
+        repeating-linear-gradient(-45deg,
+            rgba(110, 130, 64, 0.14) 0px,
+            rgba(110, 130, 64, 0.14) 10px,
+            transparent 10px,
+            transparent 20px),
+        rgba(14, 20, 10, 0.95);
+    border: 1px solid rgba(156, 207, 77, 0.45);
+    box-shadow: 0 0 12px rgba(110, 130, 64, 0.12);
+    transition: all 0.3s ease;
+}
+
+.nub-btn:hover {
+    border-color: rgba(156, 207, 77, 0.9);
+    color: #e4f0a8 !important;
+    box-shadow: 0 0 18px rgba(156, 207, 77, 0.3);
+    letter-spacing: 3px;
+}
+
+/* ── GALLERY (received art) ── */
+.nub-gallery {
+    counter-reset: nub-exhibit;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.nub-art {
+    counter-increment: nub-exhibit;
+    position: relative;
+    background: rgba(6, 9, 4, 0.78);
+    border: 1px solid rgba(110, 130, 64, 0.40);
+    padding: 8px 8px 9px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nub-art:hover {
+    border-color: rgba(156, 207, 77, 0.75);
+    box-shadow: 0 0 16px rgba(156, 207, 77, 0.16);
+}
+
+.nub-art::before {
+    content: "exhibit " counter(nub-exhibit, decimal-leading-zero);
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: #1c260f;
+    border: 1px solid rgba(156, 207, 77, 0.5);
+    color: #a7ba62;
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    z-index: 2;
+}
+
+.nub-art-img {
+    width: 100% !important;
+    max-height: 240px;
+    object-fit: cover !important;
+    display: block !important;
+    border: 1px solid rgba(78, 96, 48, 0.5) !important;
+    filter: saturate(0.92) contrast(1.04);
+    background: radial-gradient(ellipse at 50% 40%, rgba(70, 88, 46, 0.4), #0a0f07 75%);
+    transition: filter 0.3s ease;
+}
+
+.nub-art:hover .nub-art-img { filter: saturate(1.05) contrast(1.06); }
+
+.nub-art-meta {
+    padding: 8px 6px 2px;
+    text-align: center;
+}
+
+.nub-art-title {
+    display: inline-block;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e08a40 !important;
+    transition: all 0.3s ease;
+}
+
+a:hover .nub-art-title {
+    color: #f0b070 !important;
+    text-shadow: 0 0 8px rgba(224, 138, 64, 0.45);
+}
+
+.nub-art-by {
+    display: block;
+    margin-top: 3px;
+    font-family: 'Special Elite', monospace;
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #84846a;
+}
+
+.nub-art-artist {
+    color: #a7ba62 !important;
+    border-bottom: 1px dotted rgba(156, 207, 77, 0.5);
+    transition: all 0.3s ease;
+}
+
+a:hover .nub-art-artist {
+    color: #c2d47a !important;
+    border-bottom-color: rgba(156, 207, 77, 0.9);
+}
+
+/* ── FOOTER ── */
+.nub-footer {
+    text-align: center;
+    margin: 18px 24px 0;
+    padding-top: 12px;
+    font-family: 'Special Elite', monospace;
+    font-size: 9.5px;
+    color: rgba(138, 160, 78, 0.45);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(78, 96, 48, 0.22);
+}
+
+.nub-footer a { color: rgba(194, 99, 42, 0.55) !important; text-decoration: none !important; }
+.nub-footer a:hover { color: rgba(224, 138, 64, 0.85) !important; text-shadow: none !important; }
+
+/* ── SCROLLBARS INSIDE BOXES ── */
+.nub-box::-webkit-scrollbar        { width: 5px !important; }
+.nub-box::-webkit-scrollbar-track  { background: rgba(6, 9, 4, 0.6) !important; }
+.nub-box::-webkit-scrollbar-thumb  { background: rgba(110, 130, 64, 0.45) !important; }
+.nub-box::-webkit-scrollbar-thumb:hover { background: rgba(156, 207, 77, 0.6) !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 740px) {
+    .nub-territory { width: 100%; }
+
+    .nub-row {
+        flex-wrap: wrap !important;
+        margin: 6px 12px;
+    }
+
+    .nub-box-half {
+        flex: 1 1 100% !important;
+        height: auto;
+        max-height: 360px;
+    }
+
+    .nub-box-full { width: calc(100% - 24px); }
+    .nub-divider  { width: calc(100% - 24px); }
+
+    .nub-title { font-size: 26px; letter-spacing: 6px; }
+
+    .nub-dossier-grid { flex-wrap: wrap; }
+    .nub-dossier-col  { flex: 1 1 100%; }
+
+    .nub-stamp { display: none; }
+}
+
+/* ── ACCESSIBILITY — calm everything down on request ── */
+@media (prefers-reduced-motion: reduce) {
+    .nub-title,
+    .nub-avatar,
+    .nub-radar,
+    .nub-avatar-rig::before,
+    .nub-ping,
+    .nub-ff,
+    .nub-blink,
+    .nub-lamp {
+        animation: none !important;
+    }
+    .nub-ff { opacity: 0.5; }
+}
