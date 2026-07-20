@@ -3,11 +3,11 @@
     50% { transform: translateY(-10px) rotate(2deg); }
 }
 
-body::after {
-    content: "";
+.nub-doll {
     position: fixed;
     right: 18px;
     bottom: 14px;
+    display: block;
     width: 220px;
     height: 180px;
     background: url('https://nublium.github.io/liodencssnub/carahmirpagedoll.png') no-repeat bottom center;
@@ -15,12 +15,41 @@ body::after {
     transform-origin: bottom center;
     animation: nubdoll 6s ease-in-out infinite;
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .45));
-    pointer-events: none;
+    text-decoration: none;
     z-index: 9998;
 }
 
+.nub-doll:hover {
+    animation-play-state: paused;
+}
+
+.nub-doll::after {
+    content: "majestically painted by synarvis";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 3px 9px;
+    border-radius: 3px;
+    background: rgba(8, 10, 6, .88);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: .3px;
+    color: #d8d3b6;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s;
+}
+
+.nub-doll:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-width: 1100px) {
-    body::after {
+    .nub-doll {
         width: 150px;
         height: 123px;
         right: 8px;
@@ -30,9 +59,9 @@ body::after {
 }
 
 @media (max-width: 700px) {
-    body::after { display: none; }
+    .nub-doll { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    body::after { animation: none; }
+    .nub-doll { animation: none; }
 }
