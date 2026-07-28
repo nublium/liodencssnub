@@ -1,15 +1,6 @@
-/* nub's den - "the mangrove remembers"
-laid out on katie (#106445) & jester's (#187561) free template,
-so the section order and a lot of the lioden selectors are theirs
-
-css by nub (#166079) - please don't take it <3
-
-colors i used, in case i forget again:
-#0f0d0b black / #1b1714 panel / #241f1a raised panel
-#3b322a border / #5c4e40 lighter border
-#d8cdb4 text / #a2937a soft text / #756853 faded text
-#d9ab2e gold / #f0cb5a bright gold / #8a6c15 dark gold
-#a8382a red / #c85a3e bright red / #8fae3f green / #4f9287 teal */
+/* nub's den - the mangrove remembers
+built off katie (#106445) & jester's (#187561) free template
+css by nub (#166079) - please don't take it <3 */
 
 /* FONTS */
 
@@ -23,34 +14,6 @@ line-height: 1.6 !important;}
 
 .navbar {font-family: 'Libre Baskerville', Georgia, serif;}
 
-/* BACKGROUNDS
-first one is desktop, second one is mobile.
-texture is from transparenttextures.com, the color underneath it
-is what actually shows if the texture ever dies */
-
-@media screen and (min-width: 601px) {
-body {
-    background: #0f0d0b url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat fixed !important;
-    color: #d8cdb4 !important; } }
-
-@media screen and (max-width: 600px){
-body {
-background: #0f0d0b !important;
-background-size: cover;
-color: #d8cdb4 !important; } }
-
-/* SCROLL BOXES */
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px; }
-::-webkit-scrollbar-track {
-    background: #0f0d0b; }
-::-webkit-scrollbar-thumb {
-    background: #3b322a;
-border: 1px solid #5c4e40; }
-::-webkit-scrollbar-thumb:hover {
-    background: #5c4e40; }
 
 /* HEADERS */
 
@@ -83,7 +46,20 @@ text-decoration: none !important; }
 
 a:hover {
     color: #f0cb5a !important;
-text-decoration: none !important; }
+text-decoration: none !important;	}
+
+/* BACKGROUNDS */
+
+@media screen and (min-width: 601px) {
+body {
+    background: #0f0d0b url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat fixed !important;
+    color: #d8cdb4 !important; } }
+
+@media screen and (max-width: 600px){
+body {
+background: #0f0d0b !important;
+background-size: cover;
+color: #d8cdb4 !important; } }
 
 /* MAIN PANEL */
 
@@ -96,7 +72,7 @@ box-shadow: none;
 border-radius: 0px; }
 .col-md-9 {
     background: none !important;
-    color: #d8cdb4 !important; }
+    color: #HEX !important; }
 
 /* TOPBAR, NAVBAR, & BREADCRUMB */
 
@@ -104,12 +80,12 @@ border-radius: 0px; }
     background: #17130f !important;
     color: #a2937a !important;
 border: none !important;
-border-radius: 0px !important; }
+border-radius: 0px !important;  }
 .topbar a, .topbar a:hover {
 color: #a2937a !important; }
 
 .navbar, .navbar-default {
-    background: #17130f !important;
+   background: #17130f !important;
     color: #a2937a !important;
 border: none !important;
 border-bottom: 1px solid #3b322a !important;
@@ -126,16 +102,15 @@ text-transform: uppercase !important; }
     background: none !important;
 color: #f0cb5a !important; }
 
-/* these two are just the mobile navbar. the toggle is the little
-button that opens it, the collapse one hides an ugly white line */
-
 .navbar-toggle {
 border: none !important;
-background: #241f1a !important; }
+background: #241f1a !important;
+}
 
 .navbar-collapse {
 box-shadow: none !important;
-border-top: none !important; }
+border-top: none !important;
+}
 
 .breadcrumb {
     background: rgba(15, 13, 11, 0.9) !important;
@@ -159,7 +134,7 @@ color: #a2937a !important; }
     color: #d8cdb4 !important;
 border: 1px solid #5c4e40 !important;
 border-left: 3px solid #d9ab2e !important;
-border-radius: 0px !important; }
+border-radius: 0px !important;  }
 .alert a, .alert-warning a, .alert-danger a, .alert-success a {
 color: #f0cb5a !important; }
 
@@ -181,7 +156,7 @@ color: #756853 !important; }
 
 input.bad {
     background: #241f1a !important;
-    color: #c85a3e !important; }
+    color: #c85a3e !important;}
 input.bad a {
 color: #c85a3e !important; }
 
@@ -190,14 +165,34 @@ display: none !important; }
 table#player.table div.xlarge {
 margin-top: 10px !important; }
 
+/* FAPA, KING DYNASTY, ETC. */
+
+.feature {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;  }
+
+div.left {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: none !important;
+border-radius: 0px !important; }
+
+.xsmall {
+font-size: 14px !important; }
+
 /* SIDE PANELS */
 
 .panel, .panel-default, .sidebar {
     background: rgba(27, 23, 20, 0.94) !important;
     color: #d8cdb4 !important;
+border: none !important;
 border: 1px solid #3b322a !important;
 border-radius: 0px !important;
-box-shadow: none !important; }
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+box-shadow: none !important;  }
 
 .panel-heading, .panel-default > .panel-heading {
     background: #2e271f !important;
@@ -222,34 +217,29 @@ box-shadow: none !important; }
 border: 1px solid #3b322a !important;
 border-radius: 0px !important; }
 
-/* PROGRESS BARS
-if you don't color the ones below, everything just uses .progress-bar */
-
 .progress-bar {
     background: #8fae3f !important;
 border-radius: 0px !important;
 box-shadow: none !important; }
 
 /* ENERGY */ .progress-bar-warning {
-    background: #d9ab2e !important; }
+    background: #d9ab2e !important;}
 /* HUNGER */ .progress-bar-danger {
-    background: #a8382a !important; }
+    background: #a8382a !important;}
 /* EXP + ACHIEVEMENTS */ .progress-bar-success {
-    background: #8fae3f !important; }
+    background: #8fae3f !important;}
 .progress-bar-info {
-    background: #4f9287 !important; }
+    background: #4f9287 !important;}
 
-/* the Energy: X% text */
 .progress div {
     color: #d8cdb4 !important; }
 
-/* and the empty part behind the bars */
 .progress {
     background: #0c0a08 !important;
-    color: #d8cdb4 !important;
+    color: #HEX !important;
 border: 1px solid #3b322a !important;
 border-radius: 0px !important;
-height: 16px !important; }
+height: 16px !important;  }
 
 /* CHAT */
 
@@ -285,7 +275,7 @@ border-bottom: 1px solid #5c4e40 !important; }
 border: 1px solid #5c4e40 !important; }
 
 div#chatMessageContainer {
-border: none !important; }
+    border: none !important; }
 
 .s-chat-sidebar, #fra_chatContainer {
     background: rgba(12, 10, 8, 0.97) !important;
@@ -295,7 +285,7 @@ border: none !important;
 box-shadow: none !important;
 margin: 0px !important; }
 
-/* do not touch this one, chat breaks and i can never remember why */
+/* dont touch this one, chat goes weird and i can never remember why */
 html.nolayout, html.nolayout body {
     background: rgba(12, 10, 8, 0.97) !important;
 margin: 0px !important;
@@ -313,16 +303,12 @@ border: 1px solid #5c4e40 !important;
 font-family: 'Libre Baskerville', Georgia, serif;
 text-transform: uppercase !important; }
 
-/* PINNED MESSAGES - where staff pin news */
-
 #chatMessagePinned, .s-chat-message__pinned {
     background: #33280f !important;
     color: #d8cdb4 !important;
 border: 1px solid #8a6c15 !important;
 text-shadow: none !important;
 padding: 6px 10px !important; }
-
-/* odd shows at the TOP of chat, even is every other one under it */
 
 .s-chat-message {
     color: #d8cdb4 !important;
@@ -342,8 +328,6 @@ position: relative !important; }
     background: #2c251e !important;
 border-left-color: #d9ab2e !important; }
 
-/* the username sits in its own div, this keeps it above the message
-instead of everything piling onto one line */
 .s-chat-message > div:first-child {
 display: block !important;
 margin-bottom: 2px !important; }
@@ -384,7 +368,6 @@ font-style: italic !important;
 text-shadow: none !important;
 margin-top: 3px !important; }
 
-/* the little dropdown arrow on each message, tucked into the corner */
 .s-chat-message_menu {
 position: absolute !important;
 top: 6px !important;
@@ -397,8 +380,7 @@ opacity: 0.55 !important; }
 opacity: 1.0 !important;
 border-color: #d9ab2e !important; }
 
-/* pinged messages. it has to say background-color, background alone does nothing */
-
+/* has to say background-color, background on its own does nothing */
 #chatMessageList[data-pings="enabled"] .s-chat-message_mention {
 background-color: #33280f !important;
 border-left: 6px solid #d9ab2e !important;
@@ -410,9 +392,10 @@ color: #d8cdb4 !important; }
 border: 1px solid #5c4e40 !important; }
 
 div.emoteList, div.emoteList.active {
-    background: #0c0a08 !important;
-border: 1px solid #5c4e40 !important;
-box-shadow: none !important; }
+  background: #0c0a08 !important;
+  border: 1px solid #5c4e40 !important;
+  box-shadow: none !important;
+}
 
 #txtChatInput {
     background: #0c0a08 !important;
@@ -448,7 +431,6 @@ cursor: pointer !important; }
     background: #5c4818 !important;
     color: #f7e2a0 !important; }
 
-/* the X/200 counter */
 #lblCharacterCounter, #txtChatContainer a[href*="code.php"] {
     color: #756853 !important;
 font-family: 'Libre Baskerville', Georgia, serif;
@@ -460,7 +442,6 @@ text-shadow: none !important; }
 #lblCharacterCounter span {
 color: #d9ab2e !important; }
 
-/* older chat classes, some pages still use these */
 .chat_light {
     background: #110e0c !important;
     color: #d8cdb4 !important;
@@ -472,10 +453,8 @@ border-color: #241f1a !important; }
 .chat_light a, .chat_dark a {color: #c85a3e !important;}
 .chat_light a:hover, .chat_dark a:hover {color: #f0cb5a !important;}
 
-/* SIDEBAR CHAT HEADER
-the Chat heading has the Open link and the Hide button stuffed inside it
-and they overlap by default. this lines them up in a row and shoves the
-button to the right hand side */
+/* the Chat heading has the Open link and the Hide button crammed
+inside it and they sit on top of each other, this lines them up */
 
 h3[style*="position: relative"] {
 display: flex !important;
@@ -497,7 +476,6 @@ margin: 0px !important;
 line-height: inherit !important;
 flex-shrink: 0 !important; }
 
-/* and this shoves the hide button over to the right hand end */
 h3[style*="position: relative"] > div:last-child {
 margin-left: auto !important; }
 
@@ -531,41 +509,21 @@ display: block !important; }
 #fraSidebarChat {margin: 0px 0px 14px !important;}
 #fraSidebarChat.hidden {display: none !important;}
 
-/* FAPA, KING DYNASTY, ETC.
-div.left is the dynasty / achievements / showcase / beetle book buttons
-AND view breeding requests, view user log, view attack history */
-
-.feature {
-    background: #241f1a !important;
-    color: #d8cdb4 !important;
-border: 1px solid #5c4e40 !important;
-border-radius: 0px !important; }
-
-div.left {
-    background: #241f1a !important;
-    color: #d8cdb4 !important;
-border: none !important;
-border-radius: 0px !important; }
-
-.xsmall {
-font-size: 14px !important; }
-
 /* LION INFO */
 
 .table, table {
     background: none !important;
     color: #d8cdb4 !important;
 border: none !important;
-border-collapse: separate;
-border-radius: 0px; }
+    border-collapse: separate;
+    border-radius: 0px; }
 
 .table td, .table th, td, th {
 border-color: #241f1a !important; }
 
-/* .top is where your king's name goes, .bottom is the mutation count,
-th is every other header - sparring table, reclaim lions, edit details */
-
-.top, .bottom, th {
+.top,
+.bottom,
+th {
     background: #241f1a !important;
     color: #d9ab2e !important;
 border: none !important;
@@ -576,42 +534,38 @@ border-radius: 0px !important; }
 .table-striped > tbody > tr:nth-child(even) {
     background: #16120f !important; }
 
-/* this kills the underline under the X mutations link */
 .bottom a:visited, .bottom a {
-text-decoration: none !important; }
+text-decoration: none !important;}
 
 .table .left {
     background: #241f1a;
 border-radius: 0px !important; }
-
 .inner-table .left {
     background: #241f1a !important;
 border-radius: 0px !important; }
-
 .inner-table .right {
     background: #1b1714 !important;
-    color: #d8cdb4 !important;
-border-radius: 0px !important; }
-
+border-radius: 0px !important;
+color: #d8cdb4 !important; }
 .right_odd {
     background: none !important; }
 
 .inner-table .right a {
 color: #c85a3e !important; }
 
-/* lion names in the pride list */
 table#pride.table, table#pride.table a, table#pride.table a:visited {
 color: #d8cdb4 !important; }
 
-table#pride.table .xsmall {font-size: 12px !important;}
+table#pride.table .xsmall
+{font-size: 12px !important;}
 
 .featured-lion {
     background: #241f1a !important;
     color: #d9ab2e !important;
 border: none !important;
 border-radius: 0px !important;
-padding: 0px;
-margin: 0px auto;
+padding: 0;
+margin: 0 auto;
 max-width: 640px;
 font-weight: bold;
 font-size: 14px; }
@@ -647,14 +601,14 @@ input, textarea, select, button.button, button,
 .btn-info, .btn-warning, .btn-danger, .btn-sm, .btn-xs, .btn-lg,
 a.btn.btn-default.button {
     background: #2e271f !important;
-    color: #d8cdb4 !important;
 border: 1px solid #5c4e40 !important;
 border-radius: 0px !important;
+    color: #d8cdb4 !important;
 font-family: 'Libre Baskerville', Georgia, serif;
 font-size: 10px !important;
 letter-spacing: 2px !important;
 text-transform: uppercase !important;
-text-shadow: none !important;
+    text-shadow: none !important;
 box-shadow: none !important; }
 
 button:hover, .btn:hover, .btn-default:hover, button.button:hover,
@@ -663,8 +617,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
     color: #f0cb5a !important;
 border-color: #d9ab2e !important; }
 
-/* the actual typing fields want to look sunken, not raised,
-so they get their own colors after the button ones above */
+/* typing fields want to look sunken not raised so they go after */
 
 input[type="text"], input[type="number"],
 input[type="password"], input[type="email"],
@@ -675,7 +628,7 @@ border: 1px solid #3b322a !important;
 font-family: 'Cormorant Garamond', Georgia, serif !important;
 font-size: 14px !important;
 letter-spacing: 0px !important;
-text-transform: none !important; }
+text-transform: none !important }
 
 input:focus, select:focus, textarea:focus, .form-control:focus {
 border-color: #d9ab2e !important;
@@ -686,60 +639,124 @@ outline: none !important; }
 
 .cave-grid,
 .mound-grid {
-    background: #241f1a !important;
+     background: #241f1a !important;
     color: #d8cdb4 !important;
 border: 1px solid #3b322a !important;
 border-radius: 0px !important; }
 
-/* LION AND USER AVATAR OPACITY */
 
-div#lion_image {
-    opacity: 1.0;
-border-radius: 50%;
-overflow: hidden;
-border: 2px solid #5c4e40; }
-div#lion_image > div {
-border-radius: 50%;
-overflow: hidden; }
+/* SCROLL BOXES */
 
-table#player img {
-    opacity: 1.0;
-border-radius: 50%; }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; }
+::-webkit-scrollbar-track {
+    background: #0f0d0b;}
+::-webkit-scrollbar-thumb {
+    background: #3b322a;
+border: 1px solid #5c4e40; }
+::-webkit-scrollbar-thumb:hover {
+    background: #5c4e40; }
 
-/* comment tags and other user uploaded avatars, rounded to match */
-img[src*="images/tags/"],
-img[src*="/uimages/"],
-img[src*="/usertags/"],
-img[src*="/uploads/"],
-img.commentTag, .commentTag {
-border-radius: 50% !important;
-border: 2px solid #5c4e40 !important;
-object-fit: cover !important; }
+/* CREDIT */
 
-img.commentTag, .commentTag {
-width: 40px !important;
-height: 40px !important; }
+.breadcrumb::after {
+        content: "css by nub (#166079)";
+        color: #756853;
+        position: absolute;
+        right: 20%;
+        z-index: 100; }
 
-/* MEMBERS ONLINE / OFFLINE */
+@media only screen and (max-width: 1199px) and (min-width: 992px)  {
+        .breadcrumb::after {
+            right: 20%;
+        }
+    }
 
+    @media only screen and (max-width: 991px) and (min-width: 768px)  {
+        .breadcrumb::after {
+            right: 20%;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .breadcrumb::after {
+            right: 22%;
+        }
+    }
+
+/* EXTRAS - ADD/REMOVE BASED ON COMMISSION */
+
+/* BOXES */
+
+.boxcontainer {
+    background: none;
+height: 150px;
+    padding: 0px;
+    display: block;
+    justify-content: center;
+	transition: 2s}
+
+.Box1 {
+    float: left;
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+    padding: 5px;
+    float: left;
+  height: 150px;
+    width: 45%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: 1s }
+
+.Box2 {
+    float: right;
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+    padding: 5px;
+    float: right;
+height: 150px;
+    width: 45%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: 1s }
+
+.Box3 {
+    float: right;
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+    padding: 5px;
+    float: right;
+height: 150px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: 1s }
+
+/* MEMBER ONLINE */
 .member-online {
     background: #8fae3f;
-border-radius: 0px;
-width: 40px !important;
-height: 40px;
-margin: -10px;
-margin-left: 10px; }
+	border-radius: 0px;
+    width:40px!important;
+    height:40px;
+	margin:-10px;
+	margin-left:10px; }
 
+/* MEMBER OFFLINE */
 .member-offline {
     background: #3b322a;
-border-radius: 0px;
-width: 40px !important;
-height: 40px;
-margin: -10px;
-margin-left: 10px;
-filter: saturate(0%); }
-
-/* BADGES + NO LINK UNDERLINE */
+	border-radius: 0px;
+    width:40px!important;
+    height:40px;
+	margin:-10px;
+	margin-left:10px;
+	filter: saturate(0%); }
 
 .badge {
     background: #a8382a !important;
@@ -752,13 +769,9 @@ td.bottom a, th a {
 border-bottom: none !important; }
 
 /* THE DIALOGUE BOX
-this is the disco elysium looking thing on my den. the html for it
-lives in nub-disco.html, all the text is in there.
-
-heads up: lioden turns every line break in your den html into a <br>
-so the box hides them all, and the couple of bits that DO want line
-breaks get them handed back below. do not delete that rule or the
-whole thing spreads out like a puddle */
+lioden turns every line break in the html into a <br> so the box hides
+them all and the bits that actually want them get them back below.
+dont delete that or it all spreads out like a puddle */
 
 .de-territory {
     width: 440px;
@@ -777,8 +790,6 @@ whole thing spreads out like a puddle */
 .de-prose br, .de-note br, .de-role br {display: inline;}
 .de-territory p:empty {display: none; margin: 0px; height: 0px;}
 
-/* top strip - money, time, day counter */
-
 .de-bar {
 display: flex;
 justify-content: space-between;
@@ -794,8 +805,6 @@ letter-spacing: 2px;
 text-transform: uppercase; }
 
 .de-bar-mid {color: #a2937a;}
-
-/* portrait, name, and the line under the name */
 
 .de-head {padding: 18px 18px 0px;}
 
@@ -820,10 +829,6 @@ text-transform: uppercase; }
 font-size: 14px;
 font-style: italic; }
 
-/* THOUGHT TAGS
-three little labels under the name. add or remove them in the html,
-they wrap onto a second row on their own */
-
 .de-tags {
 display: flex;
 flex-wrap: wrap;
@@ -845,9 +850,7 @@ letter-spacing: 3px;
 text-transform: uppercase;
 transition: 0.3s; }
 
-/* the little diamond in front of each tag. it steals whatever color
-the tag itself is, so i only have to set the color once below */
-
+/* the little diamond nicks whatever colour the tag is */
 .de-tag::before {
 content: "";
 width: 5px;
@@ -861,9 +864,6 @@ background: currentColor; }
 .de-tag-teal {color: #6fb3a6; border-color: #4f9287;}
 .de-tag-red {color: #c85a3e; border-color: #a8382a;}
 .de-tag-gold {color: #d9ab2e; border-color: #8a6c15;}
-
-/* THE SKILL CHECK
-gold bar with the skill name, then the pass/fail underneath */
 
 .de-check {
     margin: 18px 18px 0px;
@@ -891,7 +891,7 @@ font-weight: 700;
 letter-spacing: 4px;
 text-transform: uppercase; }
 
-/* swap the class in the html to change which one you get */
+/* swap the class in the html for the other one */
 .de-result-win {color: #8fae3f;}
 .de-result-fail {color: #c85a3e;}
 
@@ -919,8 +919,6 @@ line-height: 1.75; }
 font-size: 13px;
 font-style: italic;
 line-height: 1.5; }
-
-/* THE DICE */
 
 .de-dice {
 display: flex;
@@ -950,10 +948,7 @@ font-size: 9px;
 letter-spacing: 2px;
 text-transform: uppercase; }
 
-/* THE CHOICES
-each one is a link with a span inside it. it HAS to be that way round,
-lioden strips class off <a> tags so the span is the only thing left
-that can be styled */
+/* has to be a link with a span inside, lioden strips class off <a> */
 
 .de-options {margin: 16px 18px 0px; text-align: left;}
 
@@ -1000,7 +995,7 @@ text-transform: uppercase; }
 .de-foot a {color: #756853 !important;}
 .de-foot a:hover {color: #d9ab2e !important;}
 
-/* box shrinks on phones, the dice were falling off the edge */
+/* dice were falling off the edge on my phone */
 
 @media only screen and (max-width: 480px) {
         .de-territory {
@@ -1018,32 +1013,37 @@ text-transform: uppercase; }
         }
     }
 
-/* CREDIT */
+/* LION AND USER AVATAR OPACITY */
 
-/* if the credit ends up underneath the bookmark button just make
-this percentage bigger until it clears it */
+div#lion_image {
+    opacity: 1.0;
+border-radius: 50%;
+overflow: hidden;
+border: 2px solid #5c4e40; }
+div#lion_image > div {
+border-radius: 50%;
+overflow: hidden; }
 
-.breadcrumb::after {
-        content: "css by nub (#166079)";
-        color: #756853;
-        position: absolute;
-        right: 20%;
-        z-index: 100; }
+table#player img {
+    opacity: 1.0;
+border-radius: 50%; }
 
-@media only screen and (max-width: 1199px) and (min-width: 992px)  {
-        .breadcrumb::after {
-            right: 20%;
-        }
-    }
+img[src*="images/tags/"],
+img[src*="/uimages/"],
+img[src*="/usertags/"],
+img[src*="/uploads/"],
+img.commentTag, .commentTag {
+border-radius: 50% !important;
+border: 2px solid #5c4e40 !important;
+object-fit: cover !important; }
 
-    @media only screen and (max-width: 991px) and (min-width: 768px)  {
-        .breadcrumb::after {
-            right: 20%;
-        }
-    }
+img.commentTag, .commentTag {
+width: 40px !important;
+height: 40px !important; }
 
-    @media only screen and (max-width: 767px) {
-        .breadcrumb::after {
-            right: 22%;
-        }
-    }
+/* LIODEN LOGO REPLACER - havent picked an image yet
+
+div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
+        display: none;}
+div.container.main>div:nth-child(1)>nav>div.navbar-header>a::after {
+        content: url('IMG LINK'); } */
