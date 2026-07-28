@@ -1,858 +1,1046 @@
+/* nub's den - "the mangrove remembers"
+laid out on katie (#106445) & jester's (#187561) free template,
+so the section order and a lot of the lioden selectors are theirs
+
+css by nub (#166079) - please don't take it, i spent way too long on the dice
+
+colors i used, in case i forget again:
+#0f0d0b black / #1b1714 panel / #241f1a raised panel
+#3b322a border / #5c4e40 lighter border
+#d8cdb4 text / #a2937a soft text / #756853 faded text
+#d9ab2e gold / #f0cb5a bright gold / #8a6c15 dark gold
+#a8382a red / #c85a3e bright red / #8fae3f green / #4f9287 teal */
+
+/* FONTS */
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-:root {
-    --de-void: #0f0d0b;
-    --de-panel: #1b1714;
-    --de-raised: #241f1a;
-    --de-line: #3b322a;
-    --de-line-lit: #5c4e40;
-    --de-text: #d8cdb4;
-    --de-muted: #a2937a;
-    --de-dim: #756853;
-    --de-gold: #d9ab2e;
-    --de-gold-lit: #f0cb5a;
-    --de-gold-dark: #8a6c15;
-    --de-red: #a8382a;
-    --de-red-lit: #c85a3e;
-    --de-green: #8fae3f;
-    --de-teal: #4f9287;
-    --de-teal-lit: #6fb3a6;
-}
+body {font-family: 'Cormorant Garamond', Georgia, serif !important;
+font-size: 15px !important;
+line-height: 1.6 !important;}
 
+.topbar {font-family: 'Libre Baskerville', Georgia, serif;}
+
+.navbar {font-family: 'Libre Baskerville', Georgia, serif;}
+
+/* BACKGROUNDS
+first one is desktop, second one is mobile.
+texture is from transparenttextures.com, the color underneath it
+is what actually shows if the texture ever dies */
+
+@media screen and (min-width: 601px) {
 body {
-    background-color: var(--de-void) !important;
-    background-image:
-        radial-gradient(ellipse at 18% 0%, rgba(217, 171, 46, 0.13), transparent 55%),
-        radial-gradient(ellipse at 86% 22%, rgba(79, 146, 135, 0.13), transparent 58%),
-        radial-gradient(ellipse at 40% 100%, rgba(168, 56, 42, 0.10), transparent 55%),
-        linear-gradient(180deg, #1a1613 0%, #0c0a08 100%) !important;
-    background-attachment: fixed !important;
-    color: var(--de-text) !important;
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-}
+    background: #0f0d0b url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat fixed !important;
+    color: #d8cdb4 !important; } }
 
-div.container.main,
-.container.main {
-    background: rgba(20, 17, 14, 0.94) !important;
-    border: 1px solid var(--de-line) !important;
-    border-top: none !important;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.75) !important;
-    color: var(--de-text) !important;
-}
+@media screen and (max-width: 600px){
+body {
+background: #0f0d0b !important;
+background-size: cover;
+color: #d8cdb4 !important; } }
 
-.col-md-9 {
-    background: transparent !important;
-    color: var(--de-text) !important;
-}
+/* SCROLL BOXES */
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--de-gold) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    font-weight: 700 !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase !important;
-}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; }
+::-webkit-scrollbar-track {
+    background: #0f0d0b; }
+::-webkit-scrollbar-thumb {
+    background: #3b322a;
+border: 1px solid #5c4e40; }
+::-webkit-scrollbar-thumb:hover {
+    background: #5c4e40; }
 
-a, a:link {
-    color: var(--de-red-lit) !important;
-    text-decoration: none !important;
-    transition: color 0.25s ease !important;
-}
+/* HEADERS */
 
-a:visited { color: #96432f !important; }
+h1 {color: #d9ab2e !important;
+    font-size: 44px;
+text-align: center !important;
+text-transform: uppercase !important;
+letter-spacing: 4px !important;
+font-family: 'Libre Baskerville', Georgia, serif;}
+
+h2 {color: #d9ab2e !important;
+    font-size: 22px;
+text-transform: uppercase !important;
+letter-spacing: 2px !important;
+font-family: 'Libre Baskerville', Georgia, serif;}
+
+h3, h4, h5, h6 {color: #d9ab2e !important;
+    font-size: 16px;
+text-transform: uppercase !important;
+letter-spacing: 2px !important;
+font-family: 'Libre Baskerville', Georgia, serif;}
+
+/* LINKS */
+
+a:link,
+a:visited {
+    color: #c85a3e !important;
+background: none !important;
+text-decoration: none !important; }
 
 a:hover {
-    color: var(--de-gold-lit) !important;
-    text-decoration: none !important;
-}
+    color: #f0cb5a !important;
+text-decoration: none !important; }
 
-div#lion_image,
-#lion_image {
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    border: 2px solid var(--de-line-lit) !important;
-    box-shadow: 0 0 26px rgba(0, 0, 0, 0.7), 0 0 0 4px rgba(217, 171, 46, 0.14) !important;
-}
+/* MAIN PANEL */
 
-div#lion_image > div {
-    border-radius: 50% !important;
-    overflow: hidden !important;
-}
+.container.main {
+    background: rgba(20, 17, 14, 0.94) !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-top: none !important;
+box-shadow: none;
+border-radius: 0px; }
+.col-md-9 {
+    background: none !important;
+    color: #d8cdb4 !important; }
 
-img[src*="images/tags/"],
-img[src*="static.lioden.com/img/uimages"],
-img[src*="static.lioden.com/uploads"],
-img[src*="/uimages/"],
-img[src*="/usertags/"],
-table#player img[src*="avatar"],
-img.commentTag,
-.commentTag {
-    border-radius: 50% !important;
-    border: 2px solid var(--de-line-lit) !important;
-    object-fit: cover !important;
-}
+/* TOPBAR, NAVBAR, & BREADCRUMB */
 
-img.commentTag,
-.commentTag {
-    width: 40px !important;
-    height: 40px !important;
-}
+.topbar {
+    background: #17130f !important;
+    color: #a2937a !important;
+border: none !important;
+border-radius: 0px !important; }
+.topbar a, .topbar a:hover {
+color: #a2937a !important; }
 
-.topbar,
-.navbar,
-.navbar-default {
-    background: linear-gradient(180deg, #1d1815 0%, #0f0d0b 100%) !important;
-    border-bottom: 1px solid var(--de-line) !important;
-    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.6) !important;
-}
+.navbar, .navbar-default {
+    background: #17130f !important;
+    color: #a2937a !important;
+border: none !important;
+border-bottom: 1px solid #3b322a !important;
+border-radius: 0px !important;
+font-size: 10px !important; }
 
-.navbar-default .navbar-nav > li > a,
-.navbar a {
-    color: var(--de-muted) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    text-transform: uppercase !important;
-    font-size: 10px !important;
-    letter-spacing: 1.5px !important;
-}
+.navbar li a, .navbar a {
+    color: #a2937a !important;
+font-size: 10px !important;
+letter-spacing: 2px !important;
+text-transform: uppercase !important; }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar a:hover { color: var(--de-gold-lit) !important; }
+.navbar li a:hover, .navbar a:hover {
+    background: none !important;
+color: #f0cb5a !important; }
+
+/* these two are just the mobile navbar. the toggle is the little
+button that opens it, the collapse one hides an ugly white line */
+
+.navbar-toggle {
+border: none !important;
+background: #241f1a !important; }
+
+.navbar-collapse {
+box-shadow: none !important;
+border-top: none !important; }
 
 .breadcrumb {
     background: rgba(15, 13, 11, 0.9) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    color: var(--de-dim) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    font-size: 10px !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-}
+    color: #756853 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 10px !important;
+letter-spacing: 1px !important;
+text-transform: uppercase !important; }
+.breadcrumb .active {
+    color: #756853 !important; }
 
-.sidebar,
-.panel,
-.panel-default {
+.breadcrumb a, .breadcrumb a:hover {
+color: #a2937a !important; }
+
+/* ALERTS */
+
+.alert, .alert-warning, .alert-danger, .alert-success {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-left: 3px solid #d9ab2e !important;
+border-radius: 0px !important; }
+.alert a, .alert-warning a, .alert-danger a, .alert-success a {
+color: #f0cb5a !important; }
+
+/* COMMENT BOX */
+
+div#commentBox {
+    background: #1b1714 !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important; }
+
+.comment {
+    color: #d8cdb4 !important;
+border: none !important;
+border-bottom: 1px solid #3b322a !important;
+border-radius: 0px !important; }
+.text-muted {
+color: #756853 !important; }
+
+input.bad {
+    background: #241f1a !important;
+    color: #c85a3e !important; }
+input.bad a {
+color: #c85a3e !important; }
+
+table#player.table hr {
+display: none !important; }
+table#player.table div.xlarge {
+margin-top: 10px !important; }
+
+/* SIDE PANELS */
+
+.panel, .panel-default, .sidebar {
     background: rgba(27, 23, 20, 0.94) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-    box-shadow: none !important;
-}
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important;
+box-shadow: none !important; }
 
-.panel-heading,
-.panel-default > .panel-heading {
-    background: linear-gradient(180deg, #2e271f 0%, #1b1714 100%) !important;
-    border-bottom: 1px solid var(--de-line-lit) !important;
-    border-radius: 0 !important;
-    color: var(--de-gold) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    text-transform: uppercase !important;
-    font-size: 11px !important;
-    letter-spacing: 2px !important;
-    text-shadow: none !important;
-}
+.panel-heading, .panel-default > .panel-heading {
+    background: #2e271f !important;
+    color: #d9ab2e !important;
+border: none !important;
+border-bottom: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 11px !important;
+letter-spacing: 2px !important;
+text-transform: uppercase !important;
+text-shadow: none !important; }
 
-.panel-body,
-.panel-footer {
-    background: transparent !important;
-    color: var(--de-text) !important;
-    box-shadow: none !important;
-}
+.panel-body, .panel-footer {
+    background: none !important;
+    color: #d8cdb4 !important;
+box-shadow: none !important; }
 
 .well {
-    background: rgba(24, 20, 17, 0.8) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-}
+    background: #1b1714 !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important; }
 
-.alert {
-    background: rgba(36, 31, 26, 0.9) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    border-left: 3px solid var(--de-gold) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-}
+/* PROGRESS BARS
+if you don't color the ones below, everything just uses .progress-bar */
 
-.table,
-table { color: var(--de-text) !important; }
+.progress-bar {
+    background: #8fae3f !important;
+border-radius: 0px !important;
+box-shadow: none !important; }
 
-.table > thead > tr > th,
-.table > tbody > tr > td,
-.table td, .table th,
-td, th {
-    border-color: rgba(92, 78, 64, 0.3) !important;
-    color: var(--de-text) !important;
-    background: transparent !important;
-}
+/* ENERGY */ .progress-bar-warning {
+    background: #d9ab2e !important; }
+/* HUNGER */ .progress-bar-danger {
+    background: #a8382a !important; }
+/* EXP + ACHIEVEMENTS */ .progress-bar-success {
+    background: #8fae3f !important; }
+.progress-bar-info {
+    background: #4f9287 !important; }
 
-.table-striped > tbody > tr:nth-of-type(odd)  { background-color: rgba(36, 31, 26, 0.6) !important; }
-.table-striped > tbody > tr:nth-of-type(even) { background-color: rgba(15, 13, 11, 0.4) !important; }
+/* the Energy: X% text */
+.progress div {
+    color: #d8cdb4 !important; }
 
-.thumbnail,
-.list-group-item,
-.well > a {
-    background: linear-gradient(180deg, #241f1a 0%, #16120f 100%) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-    transition: border-color 0.25s ease !important;
-}
+/* and the empty part behind the bars */
+.progress {
+    background: #0c0a08 !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important;
+height: 16px !important; }
 
-.thumbnail:hover,
-.list-group-item:hover { border-color: var(--de-gold) !important; }
+/* CHAT */
 
-.thumbnail .caption,
-.caption {
-    background: rgba(15, 13, 11, 0.85) !important;
-    color: var(--de-gold) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    font-size: 10px !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase !important;
-    text-align: center !important;
-    border-top: 1px solid var(--de-line) !important;
-}
+button#label_currentChannel, button.channelSwitcher, .chatMenu-option {
+    background: #241f1a !important;
+    color: #a2937a !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 9px !important;
+letter-spacing: 1px !important;
+text-transform: uppercase !important;
+text-shadow: none !important;
+padding: 4px 8px !important; }
 
+button.channelSwitcher.active {
+    background: #4a3a12 !important;
+    color: #f0cb5a !important;
+border-color: #d9ab2e !important; }
+
+button.channelSwitcher:hover, .chatMenu-option:hover {
+border-color: #d9ab2e !important;
+color: #f0cb5a !important; }
+
+.channelMenu {
+    background: #2e271f !important;
+    color: #d9ab2e !important;
+border-bottom: 1px solid #5c4e40 !important; }
+
+.chatMenu-container {
+    background: #1b1714 !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important; }
+
+div#chatMessageContainer {
+border: none !important; }
+
+.s-chat-sidebar, #fra_chatContainer {
+    background: rgba(12, 10, 8, 0.97) !important;
+    color: #d8cdb4 !important;
+font-family: 'Cormorant Garamond', Georgia, serif !important;
+border: none !important;
+box-shadow: none !important;
+margin: 0px !important; }
+
+/* do not touch this one, chat breaks and i can never remember why */
+html.nolayout, html.nolayout body {
+    background: rgba(12, 10, 8, 0.97) !important;
+margin: 0px !important;
+padding: 0px !important;
+border: none !important; }
+
+#chatMessageList {
+    background: none !important;
+    color: #d8cdb4 !important; }
+
+#btnLoadNewMessages {
+    background: #2e271f !important;
+    color: #d9ab2e !important;
+border: 1px solid #5c4e40 !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+text-transform: uppercase !important; }
+
+/* PINNED MESSAGES - where staff pin news */
+
+#chatMessagePinned, .s-chat-message__pinned {
+    background: #33280f !important;
+    color: #d8cdb4 !important;
+border: 1px solid #8a6c15 !important;
+text-shadow: none !important;
+padding: 6px 10px !important; }
+
+/* odd shows at the TOP of chat, even is every other one under it */
+
+.s-chat-message {
+    color: #d8cdb4 !important;
+border-bottom: 1px solid #241f1a !important;
+border-left: 2px solid transparent !important;
+text-shadow: none !important;
+padding: 6px 30px 8px 10px !important;
+margin: 0px !important;
+position: relative !important; }
+
+.s-chat-message:nth-child(odd) {
+    background: #1e1a15 !important; }
+.s-chat-message:nth-child(even) {
+    background: #110e0c !important; }
+
+.s-chat-message:hover {
+    background: #2c251e !important;
+border-left-color: #d9ab2e !important; }
+
+/* the username sits in its own div, this keeps it above the message
+instead of everything piling onto one line */
+.s-chat-message > div:first-child {
+display: block !important;
+margin-bottom: 2px !important; }
+
+.s-chat__username, .s-chat-message a.s-chat__username {
+    color: #c85a3e !important;
+font-weight: 600 !important;
+text-shadow: none !important;
+text-decoration: none !important; }
+
+.s-chat__username:hover {
+color: #f0cb5a !important; }
+
+.s-chat__username[data-type="donator"] {color: #d9ab2e !important;}
+.s-chat__username[data-type="new"] {color: #6fb3a6 !important;}
+.s-chat__username[data-type="staff"],
+.s-chat__username[data-type="moderator"] {color: #8fae3f !important;}
+
+.s-chat-message_content, .s-chat-message_content * {
+    color: #d8cdb4 !important;
+    background: none !important;
+text-shadow: none !important; }
+
+.s-chat-message_content {
+display: block !important;
+margin: 2px 0px !important;
+line-height: 1.5 !important;
+overflow-wrap: break-word !important; }
+
+.s-chat-message_content b {
+color: #d9ab2e !important; }
+
+.s-chat-message_timestamp {
+    color: #756853 !important;
+display: block !important;
+font-size: 10px !important;
+font-style: italic !important;
+text-shadow: none !important;
+margin-top: 3px !important; }
+
+/* the little dropdown arrow on each message, tucked into the corner */
+.s-chat-message_menu {
+position: absolute !important;
+top: 6px !important;
+right: 6px !important;
+    background: #2e271f !important;
+border: 1px solid #3b322a !important;
+opacity: 0.55 !important; }
+
+.s-chat-message_menu:hover {
+opacity: 1.0 !important;
+border-color: #d9ab2e !important; }
+
+/* pinged messages. it has to say background-color, background alone does nothing */
+
+#chatMessageList[data-pings="enabled"] .s-chat-message_mention {
+background-color: #33280f !important;
+border-left: 6px solid #d9ab2e !important;
+color: #d8cdb4 !important; }
+
+.emoteInput {
+    background: #241f1a !important;
+    color: #a2937a !important;
+border: 1px solid #5c4e40 !important; }
+
+div.emoteList, div.emoteList.active {
+    background: #0c0a08 !important;
+border: 1px solid #5c4e40 !important;
+box-shadow: none !important; }
+
+#txtChatInput {
+    background: #0c0a08 !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+font-family: 'Cormorant Garamond', Georgia, serif !important;
+padding: 6px 8px !important; }
+
+#txtChatInput:focus {
+border-color: #d9ab2e !important;
+box-shadow: none !important;
+outline: none !important; }
+
+#txtChatInput::placeholder {
+    color: #756853 !important;
+font-style: italic !important; }
+
+#btnChatSend {
+    background: #4a3a12 !important;
+    color: #f0cb5a !important;
+border: 1px solid #d9ab2e !important;
+border-radius: 0px !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 10px !important;
+letter-spacing: 2px !important;
+text-transform: uppercase !important;
+padding: 6px 16px !important;
+text-shadow: none !important;
+cursor: pointer !important; }
+
+#btnChatSend:hover {
+    background: #5c4818 !important;
+    color: #f7e2a0 !important; }
+
+/* the X/200 counter */
+#lblCharacterCounter, #txtChatContainer a[href*="code.php"] {
+    color: #756853 !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 9px !important;
+letter-spacing: 1px !important;
+text-transform: uppercase !important;
+text-shadow: none !important; }
+
+#lblCharacterCounter span {
+color: #d9ab2e !important; }
+
+/* older chat classes, some pages still use these */
+.chat_light {
+    background: #110e0c !important;
+    color: #d8cdb4 !important;
+border-color: #241f1a !important; }
+.chat_dark {
+    background: #1e1a15 !important;
+    color: #d8cdb4 !important;
+border-color: #241f1a !important; }
+.chat_light a, .chat_dark a {color: #c85a3e !important;}
+.chat_light a:hover, .chat_dark a:hover {color: #f0cb5a !important;}
+
+/* SIDEBAR CHAT HEADER
+the Chat heading has the Open link and the Hide button stuffed inside it
+and they overlap by default. this lines them up in a row and shoves the
+button to the right hand side */
+
+h3[style*="position: relative"] {
+display: flex !important;
+align-items: center !important;
+gap: 6px !important;
+flex-wrap: nowrap !important;
+padding: 8px 12px !important;
+margin: 14px 0px 0px !important;
+    background: #2e271f !important;
+    color: #d9ab2e !important;
+border: 1px solid #3b322a !important;
+font-size: 11px !important;
+line-height: 1.4 !important;
+overflow: visible !important; }
+
+h3[style*="position: relative"] > div {
+position: static !important;
+margin: 0px !important;
+line-height: inherit !important;
+flex-shrink: 0 !important; }
+
+/* and this shoves the hide button over to the right hand end */
+h3[style*="position: relative"] > div:last-child {
+margin-left: auto !important; }
+
+#btnToggleSidebarChat, h3 a[href*="chat.php"] {
+    background: #241f1a !important;
+    color: #a2937a !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 9px !important;
+letter-spacing: 1px !important;
+text-transform: uppercase !important;
+padding: 3px 8px !important;
+margin: 0px !important;
+line-height: 1.4 !important;
+white-space: nowrap !important;
+cursor: pointer !important; }
+
+#btnToggleSidebarChat:hover, h3 a[href*="chat.php"]:hover {
+border-color: #d9ab2e !important;
+color: #f0cb5a !important; }
+
+#fraSidebarChat, #fraSidebarChat iframe {
+    background: #0c0a08 !important;
+border: none !important;
+box-shadow: none !important;
+padding: 0px !important;
+width: 100% !important;
+display: block !important; }
+
+#fraSidebarChat {margin: 0px 0px 14px !important;}
+#fraSidebarChat.hidden {display: none !important;}
+
+/* FAPA, KING DYNASTY, ETC.
+div.left is the dynasty / achievements / showcase / beetle book buttons
+AND view breeding requests, view user log, view attack history */
+
+.feature {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important; }
+
+div.left {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: none !important;
+border-radius: 0px !important; }
+
+.xsmall {
+font-size: 14px !important; }
+
+/* LION INFO */
+
+.table, table {
+    background: none !important;
+    color: #d8cdb4 !important;
+border: none !important;
+border-collapse: separate;
+border-radius: 0px; }
+
+.table td, .table th, td, th {
+border-color: #241f1a !important; }
+
+/* .top is where your king's name goes, .bottom is the mutation count,
+th is every other header - sparring table, reclaim lions, edit details */
+
+.top, .bottom, th {
+    background: #241f1a !important;
+    color: #d9ab2e !important;
+border: none !important;
+border-radius: 0px !important; }
+
+.table-striped > tbody > tr:nth-child(odd) {
+    background: #241f1a !important; }
+.table-striped > tbody > tr:nth-child(even) {
+    background: #16120f !important; }
+
+/* this kills the underline under the X mutations link */
+.bottom a:visited, .bottom a {
+text-decoration: none !important; }
+
+.table .left {
+    background: #241f1a;
+border-radius: 0px !important; }
+
+.inner-table .left {
+    background: #241f1a !important;
+border-radius: 0px !important; }
+
+.inner-table .right {
+    background: #1b1714 !important;
+    color: #d8cdb4 !important;
+border-radius: 0px !important; }
+
+.right_odd {
+    background: none !important; }
+
+.inner-table .right a {
+color: #c85a3e !important; }
+
+/* lion names in the pride list */
+table#pride.table, table#pride.table a, table#pride.table a:visited {
+color: #d8cdb4 !important; }
+
+table#pride.table .xsmall {font-size: 12px !important;}
+
+.featured-lion {
+    background: #241f1a !important;
+    color: #d9ab2e !important;
+border: none !important;
+border-radius: 0px !important;
+padding: 0px;
+margin: 0px auto;
+max-width: 640px;
+font-weight: bold;
+font-size: 14px; }
+
+/* ACCOUNT OPTIONS */
+
+.item-header {
+    background: #2e271f !important;
+    color: #d9ab2e !important; }
+.item, .thumbnail, .list-group-item {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important; }
+
+.thumbnail:hover, .list-group-item:hover {
+border-color: #d9ab2e !important; }
+
+.thumbnail .caption, .caption {
+    background: #16120f !important;
+    color: #d9ab2e !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 10px !important;
+letter-spacing: 2px !important;
+text-transform: uppercase !important;
+text-align: center !important;
+border-top: 1px solid #3b322a !important; }
+
+/* TEXT BOXES & BUTTONS */
+
+input, textarea, select, button.button, button,
 .btn, .btn-default, .btn-primary, .btn-success,
-.btn-info, .btn-warning, .btn-danger,
-.btn-sm, .btn-xs, .btn-lg,
-input[type="submit"], input[type="button"], button {
-    background: linear-gradient(180deg, #2e271f 0%, #1a1613 100%) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    text-transform: uppercase !important;
-    font-size: 10px !important;
-    letter-spacing: 1.5px !important;
-    text-shadow: none !important;
-    box-shadow: none !important;
-    transition: all 0.25s ease !important;
-}
+.btn-info, .btn-warning, .btn-danger, .btn-sm, .btn-xs, .btn-lg,
+a.btn.btn-default.button {
+    background: #2e271f !important;
+    color: #d8cdb4 !important;
+border: 1px solid #5c4e40 !important;
+border-radius: 0px !important;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 10px !important;
+letter-spacing: 2px !important;
+text-transform: uppercase !important;
+text-shadow: none !important;
+box-shadow: none !important; }
 
-.btn:hover, .btn-default:hover, .btn-primary:hover, .btn-success:hover,
-input[type="submit"]:hover, input[type="button"]:hover, button:hover {
-    background: linear-gradient(180deg, #3a3126 0%, #241f1a 100%) !important;
-    border-color: var(--de-gold) !important;
-    color: var(--de-gold-lit) !important;
-}
+button:hover, .btn:hover, .btn-default:hover, button.button:hover,
+input[type="submit"]:hover, input[type="button"]:hover {
+    background: #3a3126 !important;
+    color: #f0cb5a !important;
+border-color: #d9ab2e !important; }
+
+/* the actual typing fields want to look sunken, not raised,
+so they get their own colors after the button ones above */
 
 input[type="text"], input[type="number"],
 input[type="password"], input[type="email"],
 select, textarea, .form-control {
-    background: rgba(12, 10, 8, 0.94) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
-}
+    background: #0c0a08 !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+font-family: 'Cormorant Garamond', Georgia, serif !important;
+font-size: 14px !important;
+letter-spacing: 0px !important;
+text-transform: none !important; }
 
 input:focus, select:focus, textarea:focus, .form-control:focus {
-    border-color: var(--de-gold) !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
+border-color: #d9ab2e !important;
+box-shadow: none !important;
+outline: none !important; }
 
-.progress {
-    background-color: rgba(12, 10, 8, 0.9) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5) !important;
-    height: 16px !important;
-}
+/* CAVE NAMES */
 
-.progress-bar,
-.progress-bar-success { background: linear-gradient(90deg, #4a5620 0%, var(--de-green) 100%) !important; }
-.progress-bar-info    { background: linear-gradient(90deg, #274842 0%, var(--de-teal) 100%) !important; }
-.progress-bar-warning { background: linear-gradient(90deg, #6b5210 0%, var(--de-gold) 100%) !important; }
-.progress-bar-danger  { background: linear-gradient(90deg, #4a1a12 0%, var(--de-red) 100%) !important; }
+.cave-grid,
+.mound-grid {
+    background: #241f1a !important;
+    color: #d8cdb4 !important;
+border: 1px solid #3b322a !important;
+border-radius: 0px !important; }
 
-.progress-bar,
-.progress-bar-success,
-.progress-bar-info,
-.progress-bar-warning,
-.progress-bar-danger {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
+/* LION AND USER AVATAR OPACITY */
 
-h3[style*="position: relative"] {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    flex-wrap: nowrap !important;
-    padding: 8px 12px !important;
-    margin: 14px 0 0 !important;
-    background: linear-gradient(180deg, #2e271f 0%, #1a1613 100%) !important;
-    border: 1px solid var(--de-line) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    font-size: 11px !important;
-    letter-spacing: 2px !important;
-    color: var(--de-gold) !important;
-    line-height: 1.4 !important;
-    overflow: visible !important;
-}
+div#lion_image {
+    opacity: 1.0;
+border-radius: 50%;
+overflow: hidden;
+border: 2px solid #5c4e40; }
+div#lion_image > div {
+border-radius: 50%;
+overflow: hidden; }
 
-h3[style*="position: relative"] > div[style*="display: inline-block"] {
-    margin: 0 0 0 auto !important;
-    flex-shrink: 0 !important;
-    line-height: inherit !important;
-}
+table#player img {
+    opacity: 1.0;
+border-radius: 50%; }
 
-h3[style*="position: relative"] > div[style*="position: absolute"] {
-    position: static !important;
-    margin: 0 !important;
-    line-height: inherit !important;
-    flex-shrink: 0 !important;
-}
+/* comment tags and other user uploaded avatars, rounded to match */
+img[src*="images/tags/"],
+img[src*="/uimages/"],
+img[src*="/usertags/"],
+img[src*="/uploads/"],
+img.commentTag, .commentTag {
+border-radius: 50% !important;
+border: 2px solid #5c4e40 !important;
+object-fit: cover !important; }
 
-#btnToggleSidebarChat,
-h3 a[href*="chat.php"] {
-    background: rgba(36, 31, 26, 0.9) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    border-radius: 0 !important;
-    color: var(--de-muted) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    font-size: 9px !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    padding: 3px 8px !important;
-    margin: 0 !important;
-    line-height: 1.4 !important;
-    white-space: nowrap !important;
-    cursor: pointer !important;
-    transition: all 0.25s ease !important;
-}
+img.commentTag, .commentTag {
+width: 40px !important;
+height: 40px !important; }
 
-#btnToggleSidebarChat:hover,
-h3 a[href*="chat.php"]:hover {
-    border-color: var(--de-gold) !important;
-    color: var(--de-gold-lit) !important;
-}
+/* MEMBERS ONLINE / OFFLINE */
 
-#fraSidebarChat,
-#fraSidebarChat iframe {
-    background: rgba(12, 10, 8, 0.96) !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    width: 100% !important;
-    display: block !important;
-}
+.member-online {
+    background: #8fae3f;
+border-radius: 0px;
+width: 40px !important;
+height: 40px;
+margin: -10px;
+margin-left: 10px; }
 
-#fraSidebarChat { margin: 0 0 14px !important; }
-#fraSidebarChat.hidden { display: none !important; }
+.member-offline {
+    background: #3b322a;
+border-radius: 0px;
+width: 40px !important;
+height: 40px;
+margin: -10px;
+margin-left: 10px;
+filter: saturate(0%); }
 
-html.nolayout,
-html.nolayout body,
-body.nolayout {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    background: rgba(12, 10, 8, 0.97) !important;
-}
+/* BADGES + NO LINK UNDERLINE */
 
-.s-chat-sidebar,
-#fra_chatContainer,
-#fra_chatContainer.s-chat-sidebar {
-    background: rgba(12, 10, 8, 0.97) !important;
-    color: var(--de-text) !important;
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-}
+.badge {
+    background: #a8382a !important;
+    color: #d8cdb4 !important; }
 
-.channelMenu {
-    background: linear-gradient(180deg, #2e271f 0%, #17130f 100%) !important;
-    border-bottom: 1px solid var(--de-line-lit) !important;
-    color: var(--de-gold) !important;
-}
+.footer a:link, .footer a:visited, .footer a:active {
+border-bottom: none !important; }
 
-.chatMenu-container {
-    background: rgba(27, 23, 20, 0.97) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    color: var(--de-text) !important;
-}
+td.bottom a, th a {
+border-bottom: none !important; }
 
-.channelSwitcher,
-.chatMenu-option {
-    background: rgba(36, 31, 26, 0.9) !important;
-    border: 1px solid var(--de-line) !important;
-    border-radius: 0 !important;
-    color: var(--de-muted) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    text-transform: uppercase !important;
-    font-size: 9px !important;
-    letter-spacing: 1px !important;
-    text-shadow: none !important;
-    padding: 4px 8px !important;
-}
+/* THE DIALOGUE BOX
+this is the disco elysium looking thing on my den. the html for it
+lives in nub-disco.html, all the text is in there.
 
-.channelSwitcher.active {
-    background: linear-gradient(180deg, #4a3a12 0%, #261e0c 100%) !important;
-    border-color: var(--de-gold) !important;
-    color: var(--de-gold-lit) !important;
-}
+heads up: lioden turns every line break in your den html into a <br>
+so the box hides them all, and the couple of bits that DO want line
+breaks get them handed back below. do not delete that rule or the
+whole thing spreads out like a puddle */
 
-.channelSwitcher:hover,
-.chatMenu-option:hover {
-    border-color: var(--de-gold) !important;
-    color: var(--de-gold-lit) !important;
-}
-
-#btnLoadNewMessages {
-    background: rgba(46, 39, 31, 0.95) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    color: var(--de-gold) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    text-transform: uppercase !important;
-}
-
-#chatMessagePinned,
-.s-chat-message__pinned {
-    background: linear-gradient(180deg, #33280f 0%, #1a1613 100%) !important;
-    border: 1px solid rgba(217, 171, 46, 0.45) !important;
-    color: var(--de-text) !important;
-    text-shadow: none !important;
-    padding: 6px 10px !important;
-}
-
-#chatMessageList {
-    background: transparent !important;
-    color: var(--de-text) !important;
-}
-
-.s-chat-message {
-    border-bottom: 1px solid rgba(92, 78, 64, 0.18) !important;
-    border-left: 2px solid transparent !important;
-    color: var(--de-text) !important;
-    text-shadow: none !important;
-    padding: 6px 30px 8px 10px !important;
-    margin: 0 !important;
-    position: relative !important;
-}
-
-.s-chat-message:nth-of-type(odd)  { background: rgba(30, 26, 21, 0.9) !important; }
-.s-chat-message:nth-of-type(even) { background: rgba(17, 14, 12, 0.82) !important; }
-
-.s-chat-message:hover {
-    background: rgba(44, 37, 30, 0.95) !important;
-    border-left-color: var(--de-gold) !important;
-}
-
-.s-chat-message > div:first-child {
-    display: block !important;
-    margin-bottom: 2px !important;
-}
-
-.s-chat__username,
-.s-chat-message a.s-chat__username {
-    color: var(--de-red-lit) !important;
-    font-weight: 600 !important;
-    text-shadow: none !important;
-    text-decoration: none !important;
-}
-
-.s-chat__username:hover { color: var(--de-gold-lit) !important; }
-
-.s-chat__username[data-type="donator"] { color: var(--de-gold) !important; }
-.s-chat__username[data-type="new"]     { color: var(--de-teal-lit) !important; }
-
-.s-chat__username[data-type="staff"],
-.s-chat__username[data-type="moderator"] { color: var(--de-green) !important; }
-
-.s-chat-message_content,
-.s-chat-message_content * {
-    color: var(--de-text) !important;
-    text-shadow: none !important;
-    background: transparent !important;
-}
-
-.s-chat-message_content {
-    display: block !important;
-    margin: 2px 0 !important;
-    overflow-wrap: break-word !important;
-    line-height: 1.5 !important;
-}
-
-.s-chat-message_content b { color: var(--de-gold) !important; }
-
-.s-chat-message_timestamp {
-    display: block !important;
-    color: var(--de-dim) !important;
-    font-size: 10px !important;
-    font-style: italic !important;
-    text-shadow: none !important;
-    margin-top: 3px !important;
-}
-
-.s-chat-message_menu {
-    position: absolute !important;
-    top: 6px !important;
-    right: 6px !important;
-    background: rgba(46, 39, 31, 0.6) !important;
-    border: 1px solid var(--de-line) !important;
-    opacity: 0.55 !important;
-    transition: all 0.25s ease !important;
-}
-
-.s-chat-message_menu:hover {
-    opacity: 1 !important;
-    border-color: var(--de-gold) !important;
-}
-
-.s-chat-message__icon {
-    filter: sepia(45%) saturate(70%) brightness(92%) !important;
-    opacity: 0.85 !important;
-}
-
-#txtChatInput {
-    background: rgba(12, 10, 8, 0.97) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    border-radius: 0 !important;
-    color: var(--de-text) !important;
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
-    padding: 6px 8px !important;
-}
-
-#txtChatInput:focus {
-    border-color: var(--de-gold) !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-#txtChatInput::placeholder {
-    color: var(--de-dim) !important;
-    font-style: italic !important;
-}
-
-#btnChatSend {
-    background: linear-gradient(180deg, #4a3a12 0%, #261e0c 100%) !important;
-    border: 1px solid var(--de-gold) !important;
-    border-radius: 0 !important;
-    color: var(--de-gold-lit) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    font-size: 10px !important;
-    padding: 6px 16px !important;
-    text-shadow: none !important;
-    cursor: pointer !important;
-    transition: all 0.25s ease !important;
-}
-
-#btnChatSend:hover {
-    background: linear-gradient(180deg, #5c4818 0%, #33280f 100%) !important;
-    color: #f7e2a0 !important;
-}
-
-#lblCharacterCounter,
-#txtChatContainer a[href*="code.php"] {
-    color: var(--de-dim) !important;
-    font-family: 'Libre Baskerville', Georgia, serif !important;
-    font-size: 9px !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    text-shadow: none !important;
-}
-
-#lblCharacterCounter span { color: var(--de-gold) !important; }
-
-.emoteInput {
-    background: rgba(36, 31, 26, 0.9) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    color: var(--de-muted) !important;
-}
-
-.emoteList {
-    background: rgba(12, 10, 8, 0.98) !important;
-    border: 1px solid var(--de-line-lit) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
-}
-
-.chat_light {
-    background: rgba(17, 14, 12, 0.82) !important;
-    border-color: rgba(92, 78, 64, 0.18) !important;
-    color: var(--de-text) !important;
-}
-
-.chat_dark {
-    background: rgba(30, 26, 21, 0.9) !important;
-    border-color: rgba(92, 78, 64, 0.18) !important;
-    color: var(--de-text) !important;
-}
-
-.chat_light a, .chat_dark a { color: var(--de-red-lit) !important; }
-.chat_light a:hover, .chat_dark a:hover { color: var(--de-gold-lit) !important; }
-
-::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
-::-webkit-scrollbar-track { background: #0f0d0b !important; }
-::-webkit-scrollbar-thumb { background: #3b322a !important; border: 1px solid #5c4e40 !important; }
-::-webkit-scrollbar-thumb:hover { background: #5c4e40 !important; }
-
-.de-territory {
+.dialoguebox {
     width: 440px;
     max-width: 100%;
     margin: 14px auto;
-    padding: 0 0 18px;
+    padding: 0px 0px 18px;
     box-sizing: border-box;
+    background: linear-gradient(180deg, #241f1a 0%, #120f0d 100%);
+    color: #d8cdb4;
+    border: 1px solid #5c4e40;
     font-family: 'Cormorant Garamond', Georgia, serif;
-    color: var(--de-text);
     text-align: center;
-    line-height: 1.6;
-    background:
-        radial-gradient(ellipse 300px 190px at 18% 4%, rgba(217, 171, 46, 0.09), transparent 70%),
-        radial-gradient(ellipse 280px 200px at 88% 55%, rgba(79, 146, 135, 0.10), transparent 70%),
-        radial-gradient(ellipse 260px 180px at 30% 100%, rgba(168, 56, 42, 0.08), transparent 70%),
-        linear-gradient(180deg, #241f1a 0%, #120f0d 100%);
-    border: 1px solid var(--de-line-lit);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.65);
-}
+    line-height: 1.6; }
 
-.de-territory br { display: none; }
-.de-prose br,
-.de-note br,
-.de-role br { display: inline; }
-.de-territory p:empty { display: none; margin: 0; height: 0; }
+.dialoguebox br {display: none;}
+.narration br, .rednote br, .charsub br {display: inline;}
+.dialoguebox p:empty {display: none; margin: 0px; height: 0px;}
 
-.de-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+/* top strip - money, time, day counter */
+
+.topline {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px;
     padding: 6px 12px;
-    background: rgba(12, 10, 8, 0.85);
-    border-bottom: 1px solid var(--de-line);
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 9.5px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--de-dim);
-}
+    background: #0c0a08;
+    color: #756853;
+border-bottom: 1px solid #3b322a;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase; }
 
-.de-bar-mid { color: var(--de-muted); }
+.clocktime {color: #a2937a;}
 
-.de-head { padding: 18px 18px 0; }
+/* portrait, name, and the line under the name */
 
-.de-portrait {
+.portraitbox {padding: 18px 18px 0px;}
+
+.portrait {
     width: 104px;
     height: 104px;
     object-fit: cover;
-    border: 2px solid var(--de-line-lit);
-    box-shadow: 0 0 0 4px rgba(217, 171, 46, 0.12), 0 6px 20px rgba(0, 0, 0, 0.6);
-    filter: sepia(12%) saturate(0.92) contrast(1.05);
-}
+border: 2px solid #5c4e40; }
 
-.de-name {
+.charname {
     margin-top: 14px;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 19px;
-    font-weight: 700;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--de-text);
-}
+    color: #d8cdb4;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 19px;
+font-weight: 700;
+letter-spacing: 5px;
+text-transform: uppercase; }
 
-.de-role {
+.charsub {
     margin-top: 4px;
-    font-size: 13.5px;
-    font-style: italic;
-    color: var(--de-muted);
-}
+    color: #a2937a;
+font-size: 14px;
+font-style: italic; }
 
-.de-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 7px;
-    margin: 16px 18px 0;
-}
+/* THOUGHT TAGS
+three little labels under the name. add or remove them in the html,
+they wrap onto a second row on their own */
 
-.de-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
+.tagrow {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 7px;
+margin: 16px 18px 0px; }
+
+.chartag {
+display: inline-flex;
+align-items: center;
+gap: 7px;
     padding: 5px 13px 5px 11px;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    background: linear-gradient(180deg, rgba(46, 39, 31, 0.95) 0%, rgba(20, 17, 14, 0.95) 100%);
-    border: 1px solid var(--de-line-lit);
-    box-shadow: inset 0 1px 0 rgba(216, 205, 180, 0.07), 0 2px 7px rgba(0, 0, 0, 0.45);
-    color: var(--de-muted);
-    transition: all 0.25s ease;
-}
+    background: #241f1a;
+    color: #a2937a;
+border: 1px solid #5c4e40;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 9px;
+letter-spacing: 3px;
+text-transform: uppercase;
+transition: 0.3s; }
 
-.de-tag::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    flex: 0 0 auto;
-    transform: rotate(45deg);
-    background: currentColor;
-    box-shadow: 0 0 7px currentColor;
-}
+/* the little diamond in front of each tag. it steals whatever color
+the tag itself is, so i only have to set the color once below */
 
-.de-tag:hover {
-    border-color: currentColor;
-    box-shadow: inset 0 1px 0 rgba(216, 205, 180, 0.07), 0 3px 12px rgba(0, 0, 0, 0.55);
-}
+.chartag::before {
+content: "";
+width: 5px;
+height: 5px;
+flex: 0 0 auto;
+transform: rotate(45deg);
+background: currentColor; }
 
-.de-tag-teal { color: var(--de-teal-lit); border-color: rgba(79, 146, 135, 0.55); }
-.de-tag-red  { color: var(--de-red-lit);  border-color: rgba(168, 56, 42, 0.6); }
-.de-tag-gold { color: var(--de-gold);     border-color: rgba(217, 171, 46, 0.55); }
+.chartag:hover {border-color: currentColor;}
 
-.de-check {
-    margin: 18px 18px 0;
-    background: linear-gradient(180deg, #2b241d 0%, #16120f 100%);
-    border: 1px solid var(--de-line-lit);
-    box-shadow: inset 0 0 44px rgba(0, 0, 0, 0.45);
-}
+.tagteal {color: #6fb3a6; border-color: #4f9287;}
+.tagred {color: #c85a3e; border-color: #a8382a;}
+.taggold {color: #d9ab2e; border-color: #8a6c15;}
 
-.de-skill {
+/* THE SKILL CHECK
+gold bar with the skill name, then the pass/fail underneath */
+
+.skillcheck {
+    margin: 18px 18px 0px;
+    background: #16120f;
+border: 1px solid #5c4e40; }
+
+.skillname {
     padding: 7px 12px;
-    background: linear-gradient(180deg, var(--de-gold-lit) 0%, var(--de-gold) 55%, var(--de-gold-dark) 100%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    background: linear-gradient(180deg, #f0cb5a 0%, #d9ab2e 55%, #8a6c15 100%);
     color: #1c1405;
-    text-shadow: 0 1px 0 rgba(255, 236, 170, 0.35);
-}
+border-bottom: 1px solid #0f0d0b;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase; }
 
-.de-check-body { padding: 16px 18px 14px; }
+.checkbody {padding: 16px 18px 14px;}
 
-.de-result {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--de-text);
-}
+.checkresult {
+    color: #d8cdb4;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 26px;
+font-weight: 700;
+letter-spacing: 4px;
+text-transform: uppercase; }
 
-.de-result-win  { color: var(--de-green); text-shadow: 0 0 22px rgba(143, 174, 63, 0.3); }
-.de-result-fail { color: var(--de-red-lit); text-shadow: 0 0 22px rgba(168, 56, 42, 0.35); }
+/* swap the class in the html to change which one you get */
+.resultwin {color: #8fae3f;}
+.resultfail {color: #c85a3e;}
 
-.de-odds {
+.checkodds {
     margin-top: 2px;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 20px;
-    letter-spacing: 2px;
-    color: var(--de-text);
-}
+    color: #d8cdb4;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 20px;
+letter-spacing: 2px; }
 
-.de-prose {
-    margin: 14px 0 0;
+.narration {
+    margin: 14px 0px 0px;
     padding: 9px 13px;
-    text-align: left;
-    font-size: 14.5px;
-    font-style: italic;
-    line-height: 1.75;
-    color: var(--de-muted);
-    background: rgba(12, 10, 8, 0.5);
-    border-left: 2px solid rgba(168, 56, 42, 0.6);
-}
+    background: #12100d;
+    color: #a2937a;
+border-left: 2px solid #a8382a;
+text-align: left;
+font-size: 15px;
+font-style: italic;
+line-height: 1.75; }
 
-.de-note {
+.rednote {
     margin-top: 14px;
-    font-size: 12.5px;
-    font-style: italic;
-    color: var(--de-dim);
-    line-height: 1.5;
-}
+    color: #756853;
+font-size: 13px;
+font-style: italic;
+line-height: 1.5; }
 
-.de-dice {
-    display: flex;
-    justify-content: center;
-    gap: 26px;
+/* THE DICE */
+
+.dicerow {
+display: flex;
+justify-content: center;
+gap: 26px;
     margin-top: 14px;
     padding-top: 12px;
-    border-top: 1px solid var(--de-line);
-}
+border-top: 1px solid #3b322a; }
 
-.de-die { flex: 0 0 auto; }
+.dieblock {flex: 0 0 auto;}
 
-.de-pips {
-    display: block;
-    font-size: 21px;
-    letter-spacing: 3px;
-    color: var(--de-dim);
-}
+.pips {
+display: block;
+    color: #756853;
+font-size: 21px;
+letter-spacing: 3px; }
 
-.de-pips-lose { color: var(--de-red); }
-.de-pips-win  { color: var(--de-gold); }
+.pipslose {color: #a8382a;}
+.pipswin {color: #d9ab2e;}
 
-.de-die-label {
-    display: block;
+.dielabel {
+display: block;
     margin-top: 2px;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 8.5px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--de-dim);
-}
+    color: #756853;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 9px;
+letter-spacing: 2px;
+text-transform: uppercase; }
 
-.de-options { margin: 16px 18px 0; text-align: left; }
+/* THE CHOICES
+each one is a link with a span inside it. it HAS to be that way round,
+lioden strips class off <a> tags so the span is the only thing left
+that can be styled */
 
-.de-options a { display: block; }
+.choices {margin: 16px 18px 0px; text-align: left;}
 
-.de-opt {
-    display: block;
+.choices a {display: block;}
+
+.choice {
+display: block;
     padding: 8px 10px;
-    border-left: 2px solid transparent;
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: var(--de-red-lit);
-    transition: all 0.25s ease;
-}
+    color: #c85a3e;
+border-left: 2px solid transparent;
+font-size: 15px;
+line-height: 1.55;
+transition: 0.3s; }
 
-.de-opt:hover {
-    background: rgba(217, 171, 46, 0.07);
-    border-left-color: var(--de-gold);
-    color: var(--de-gold-lit);
-}
+.choice:hover {
+    background: #1c1813;
+    color: #f0cb5a;
+border-left-color: #d9ab2e; }
 
-.de-opt-num {
+.choicenum {
     margin-right: 7px;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 11px;
-    color: var(--de-dim);
-}
+    color: #756853;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 11px; }
 
-.de-opt-skill {
+.choiceskill {
     margin-right: 5px;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--de-teal-lit);
-}
+    color: #6fb3a6;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 10px;
+letter-spacing: 1px;
+text-transform: uppercase; }
 
-.de-foot {
-    margin: 18px 18px 0;
+.boxfoot {
+    margin: 18px 18px 0px;
     padding-top: 10px;
-    border-top: 1px solid var(--de-line);
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 8.5px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--de-dim);
-}
+    color: #756853;
+border-top: 1px solid #3b322a;
+font-family: 'Libre Baskerville', Georgia, serif;
+font-size: 9px;
+letter-spacing: 3px;
+text-transform: uppercase; }
 
-.de-foot a { color: var(--de-dim) !important; }
-.de-foot a:hover { color: var(--de-gold) !important; }
+.boxfoot a {color: #756853 !important;}
+.boxfoot a:hover {color: #d9ab2e !important;}
 
-@media (max-width: 480px) {
-    .de-territory { width: 100%; }
-    .de-name { font-size: 16px; letter-spacing: 3px; }
-    .de-result { font-size: 22px; }
-    .de-dice { gap: 16px; }
-}
+/* box shrinks on phones, the dice were falling off the edge */
+
+@media only screen and (max-width: 480px) {
+        .dialoguebox {
+            width: 100%;
+        }
+        .charname {
+            font-size: 16px;
+            letter-spacing: 3px;
+        }
+        .checkresult {
+            font-size: 22px;
+        }
+        .dicerow {
+            gap: 16px;
+        }
+    }
+
+/* CREDIT */
+
+.breadcrumb::after {
+        content: "css by nub (#166079)";
+        color: #756853;
+        position: absolute;
+        right: 13%;
+        z-index: 100; }
+
+@media only screen and (max-width: 1199px) and (min-width: 992px)  {
+        .breadcrumb::after {
+            right: 20%;
+        }
+    }
+
+    @media only screen and (max-width: 991px) and (min-width: 768px)  {
+        .breadcrumb::after {
+            right: 20%;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .breadcrumb::after {
+            right: 22%;
+        }
+    }
