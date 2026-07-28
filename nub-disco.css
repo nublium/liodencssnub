@@ -222,7 +222,8 @@ box-shadow: none !important; }
 border: 1px solid #3b322a !important;
 border-radius: 0px !important; }
 
-/* PROGRESS BARS */
+/* PROGRESS BARS
+if you don't color the ones below, everything just uses .progress-bar */
 
 .progress-bar {
     background: #8fae3f !important;
@@ -240,7 +241,7 @@ box-shadow: none !important; }
 
 /* the Energy: X% text */
 .progress div {
-    color: #F0EAD6 !important; }
+    color: #d8cdb4 !important; }
 
 /* and the empty part behind the bars */
 .progress {
@@ -759,7 +760,7 @@ so the box hides them all, and the couple of bits that DO want line
 breaks get them handed back below. do not delete that rule or the
 whole thing spreads out like a puddle */
 
-.dialoguebox {
+.de-territory {
     width: 440px;
     max-width: 100%;
     margin: 14px auto;
@@ -772,13 +773,13 @@ whole thing spreads out like a puddle */
     text-align: center;
     line-height: 1.6; }
 
-.dialoguebox br {display: none;}
-.narration br, .rednote br, .charsub br {display: inline;}
-.dialoguebox p:empty {display: none; margin: 0px; height: 0px;}
+.de-territory br {display: none;}
+.de-prose br, .de-note br, .de-role br {display: inline;}
+.de-territory p:empty {display: none; margin: 0px; height: 0px;}
 
 /* top strip - money, time, day counter */
 
-.topline {
+.de-bar {
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -792,19 +793,19 @@ font-size: 10px;
 letter-spacing: 2px;
 text-transform: uppercase; }
 
-.clocktime {color: #a2937a;}
+.de-bar-mid {color: #a2937a;}
 
 /* portrait, name, and the line under the name */
 
-.portraitbox {padding: 18px 18px 0px;}
+.de-head {padding: 18px 18px 0px;}
 
-.portrait {
+.de-portrait {
     width: 104px;
     height: 104px;
     object-fit: cover;
 border: 2px solid #5c4e40; }
 
-.charname {
+.de-name {
     margin-top: 14px;
     color: #d8cdb4;
 font-family: 'Libre Baskerville', Georgia, serif;
@@ -813,7 +814,7 @@ font-weight: 700;
 letter-spacing: 5px;
 text-transform: uppercase; }
 
-.charsub {
+.de-role {
     margin-top: 4px;
     color: #a2937a;
 font-size: 14px;
@@ -823,14 +824,14 @@ font-style: italic; }
 three little labels under the name. add or remove them in the html,
 they wrap onto a second row on their own */
 
-.tagrow {
+.de-tags {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 gap: 7px;
 margin: 16px 18px 0px; }
 
-.chartag {
+.de-tag {
 display: inline-flex;
 align-items: center;
 gap: 7px;
@@ -847,7 +848,7 @@ transition: 0.3s; }
 /* the little diamond in front of each tag. it steals whatever color
 the tag itself is, so i only have to set the color once below */
 
-.chartag::before {
+.de-tag::before {
 content: "";
 width: 5px;
 height: 5px;
@@ -855,21 +856,21 @@ flex: 0 0 auto;
 transform: rotate(45deg);
 background: currentColor; }
 
-.chartag:hover {border-color: currentColor;}
+.de-tag:hover {border-color: currentColor;}
 
-.tagteal {color: #6fb3a6; border-color: #4f9287;}
-.tagred {color: #c85a3e; border-color: #a8382a;}
-.taggold {color: #d9ab2e; border-color: #8a6c15;}
+.de-tag-teal {color: #6fb3a6; border-color: #4f9287;}
+.de-tag-red {color: #c85a3e; border-color: #a8382a;}
+.de-tag-gold {color: #d9ab2e; border-color: #8a6c15;}
 
 /* THE SKILL CHECK
 gold bar with the skill name, then the pass/fail underneath */
 
-.skillcheck {
+.de-check {
     margin: 18px 18px 0px;
     background: #16120f;
 border: 1px solid #5c4e40; }
 
-.skillname {
+.de-skill {
     padding: 7px 12px;
     background: linear-gradient(180deg, #f0cb5a 0%, #d9ab2e 55%, #8a6c15 100%);
     color: #1c1405;
@@ -880,9 +881,9 @@ font-weight: 700;
 letter-spacing: 3px;
 text-transform: uppercase; }
 
-.checkbody {padding: 16px 18px 14px;}
+.de-check-body {padding: 16px 18px 14px;}
 
-.checkresult {
+.de-result {
     color: #d8cdb4;
 font-family: 'Libre Baskerville', Georgia, serif;
 font-size: 26px;
@@ -891,17 +892,17 @@ letter-spacing: 4px;
 text-transform: uppercase; }
 
 /* swap the class in the html to change which one you get */
-.resultwin {color: #8fae3f;}
-.resultfail {color: #c85a3e;}
+.de-result-win {color: #8fae3f;}
+.de-result-fail {color: #c85a3e;}
 
-.checkodds {
+.de-odds {
     margin-top: 2px;
     color: #d8cdb4;
 font-family: 'Libre Baskerville', Georgia, serif;
 font-size: 20px;
 letter-spacing: 2px; }
 
-.narration {
+.de-prose {
     margin: 14px 0px 0px;
     padding: 9px 13px;
     background: #12100d;
@@ -912,7 +913,7 @@ font-size: 15px;
 font-style: italic;
 line-height: 1.75; }
 
-.rednote {
+.de-note {
     margin-top: 14px;
     color: #756853;
 font-size: 13px;
@@ -921,7 +922,7 @@ line-height: 1.5; }
 
 /* THE DICE */
 
-.dicerow {
+.de-dice {
 display: flex;
 justify-content: center;
 gap: 26px;
@@ -929,18 +930,18 @@ gap: 26px;
     padding-top: 12px;
 border-top: 1px solid #3b322a; }
 
-.dieblock {flex: 0 0 auto;}
+.de-die {flex: 0 0 auto;}
 
-.pips {
+.de-pips {
 display: block;
     color: #756853;
 font-size: 21px;
 letter-spacing: 3px; }
 
-.pipslose {color: #a8382a;}
-.pipswin {color: #d9ab2e;}
+.de-pips-lose {color: #a8382a;}
+.de-pips-win {color: #d9ab2e;}
 
-.dielabel {
+.de-die-label {
 display: block;
     margin-top: 2px;
     color: #756853;
@@ -954,11 +955,11 @@ each one is a link with a span inside it. it HAS to be that way round,
 lioden strips class off <a> tags so the span is the only thing left
 that can be styled */
 
-.choices {margin: 16px 18px 0px; text-align: left;}
+.de-options {margin: 16px 18px 0px; text-align: left;}
 
-.choices a {display: block;}
+.de-options a {display: block;}
 
-.choice {
+.de-opt {
 display: block;
     padding: 8px 10px;
     color: #c85a3e;
@@ -967,18 +968,18 @@ font-size: 15px;
 line-height: 1.55;
 transition: 0.3s; }
 
-.choice:hover {
+.de-opt:hover {
     background: #1c1813;
     color: #f0cb5a;
 border-left-color: #d9ab2e; }
 
-.choicenum {
+.de-opt-num {
     margin-right: 7px;
     color: #756853;
 font-family: 'Libre Baskerville', Georgia, serif;
 font-size: 11px; }
 
-.choiceskill {
+.de-opt-skill {
     margin-right: 5px;
     color: #6fb3a6;
 font-family: 'Libre Baskerville', Georgia, serif;
@@ -986,7 +987,7 @@ font-size: 10px;
 letter-spacing: 1px;
 text-transform: uppercase; }
 
-.boxfoot {
+.de-foot {
     margin: 18px 18px 0px;
     padding-top: 10px;
     color: #756853;
@@ -996,34 +997,37 @@ font-size: 9px;
 letter-spacing: 3px;
 text-transform: uppercase; }
 
-.boxfoot a {color: #756853 !important;}
-.boxfoot a:hover {color: #d9ab2e !important;}
+.de-foot a {color: #756853 !important;}
+.de-foot a:hover {color: #d9ab2e !important;}
 
 /* box shrinks on phones, the dice were falling off the edge */
 
 @media only screen and (max-width: 480px) {
-        .dialoguebox {
+        .de-territory {
             width: 100%;
         }
-        .charname {
+        .de-name {
             font-size: 16px;
             letter-spacing: 3px;
         }
-        .checkresult {
+        .de-result {
             font-size: 22px;
         }
-        .dicerow {
+        .de-dice {
             gap: 16px;
         }
     }
 
 /* CREDIT */
 
+/* if the credit ends up underneath the bookmark button just make
+this percentage bigger until it clears it */
+
 .breadcrumb::after {
         content: "css by nub (#166079)";
         color: #756853;
         position: absolute;
-        right: 13%;
+        right: 20%;
         z-index: 100; }
 
 @media only screen and (max-width: 1199px) and (min-width: 992px)  {
