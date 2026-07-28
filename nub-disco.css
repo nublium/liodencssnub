@@ -2,7 +2,7 @@
 laid out on katie (#106445) & jester's (#187561) free template,
 so the section order and a lot of the lioden selectors are theirs
 
-css by nub (#166079) - please don't take it, i spent way too long on the dice
+css by nub (#166079) - please don't take it <3
 
 colors i used, in case i forget again:
 #0f0d0b black / #1b1714 panel / #241f1a raised panel
@@ -222,8 +222,7 @@ box-shadow: none !important; }
 border: 1px solid #3b322a !important;
 border-radius: 0px !important; }
 
-/* PROGRESS BARS
-if you don't color the ones below, everything just uses .progress-bar */
+/* PROGRESS BARS */
 
 .progress-bar {
     background: #8fae3f !important;
