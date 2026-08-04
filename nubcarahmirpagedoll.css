@@ -10,8 +10,8 @@ a[href*="territory.php?id=596724"]:empty {
     display: block;
     width: 220px;
     height: 180px;
-    background: url('https://nublium.github.io/liodencssnub/carahmirpagedoll.png') no-repeat bottom center;
-    background-size: contain;
+    background: url('https://nublium.github.io/liodencssnub/carahmirpagedoll.png') no-repeat bottom center !important;
+    background-size: contain !important;
     transform-origin: bottom center;
     animation: nubdoll 6s ease-in-out infinite;
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .45));
