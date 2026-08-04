@@ -56,14 +56,7 @@ a:hover {
     color: #f0cb5a !important;
 text-decoration: none !important;	}
 
-/* BACKGROUNDS
-top to bottom - leather grain, then the dark corners, then warm
-lamplight coming down from above, cold green swamp light rising from
-below, and the falloff underneath all of it. that is the whole trick,
-two light sources and dark edges so it isnt one flat slab.
-the texture is from transparenttextures.com, swap it if you get bored.
-if you ever want a proper picture back there, put it in as the last
-layer with no-repeat center fixed / cover and drop the flat gradient */
+/* BACKGROUNDS*/
 
 @media screen and (min-width: 601px) {
 body {
@@ -74,8 +67,7 @@ radial-gradient(ellipse 1300px 700px at 50% 100%, rgba(79, 146, 135, 0.14) 0%, r
 linear-gradient(180deg, #191410 0%, #0f0d0b 45%, #070605 100%) fixed !important;
     color: #d8cdb4 !important; } }
 
-/* phones hate background-attachment fixed, it stutters, so mobile gets
-the same thing pinned down flat and one glow instead of two */
+/* phones hate background-attachment fixed */
 
 @media screen and (max-width: 600px){
 body {
@@ -86,10 +78,6 @@ background-size: auto, cover, cover;
 color: #d8cdb4 !important; } }
 
 /* MAIN PANEL */
-
-/* left a bit see-through on purpose so the leather grain and the
-lamplight read faintly through the page instead of stopping dead
-at the edge of the panel */
 
 .container.main {
     background: linear-gradient(180deg, rgba(28, 23, 19, 0.93) 0%, rgba(17, 14, 12, 0.93) 100%) !important;
@@ -713,10 +701,6 @@ on one line without shoving the credit halfway across the page */
         }
     }
 
-/* on a phone the credit is longer than the breadcrumb is wide, so it
-stops floating and just sits on its own line underneath instead of
-landing on top of "home > your den" */
-
     @media only screen and (max-width: 767px) {
         .breadcrumb::after {
             position: static;
@@ -781,9 +765,7 @@ height: 150px;
     margin-bottom: 10px;
     transition: 1s }
 
-/* MEMBER ONLINE
-left exactly as lioden ships it - the little green dot next to the
-name. it was a big square before and it looked like a bug */
+/* MEMBER ONLINE*/
 
 .member-online {
     background: #34DD1A;
@@ -812,15 +794,7 @@ border-bottom: none !important; }
 td.bottom a, th a {
 border-bottom: none !important; }
 
-/* THE DIALOGUE BOX
-lioden turns every line break in the html into a <br> so the box hides
-them all and the bits that actually want them get them back below.
-dont delete that or it all spreads out like a puddle */
-
-/* it used to be a fixed 440px and looked like a postage stamp stranded
-in the middle of the territory column. now it just fills whatever column
-it is dropped into, with a cap so the prose lines dont get silly on
-a big monitor */
+/* THE DIALOGUE BOX */
 
 .de-territory {
     width: 100%;
@@ -952,8 +926,6 @@ font-size: 20px;
 font-weight: 700;
 letter-spacing: 2px; }
 
-/* the prose block gets its own reading width so it doesnt turn into
-one enormous line now that the box is wider */
 
 .de-prose {
     margin: 16px auto 0px;
