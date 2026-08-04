@@ -4,15 +4,15 @@ css by nub (#166079) - please don't take it <3 */
 
 /* FONTS */
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Oswald:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
-body {font-family: 'Cormorant Garamond', Georgia, serif !important;
-font-size: 15px !important;
-line-height: 1.6 !important;}
+body {font-family: 'EB Garamond', Georgia, serif !important;
+font-size: 16px !important;
+line-height: 1.65 !important;}
 
-.topbar {font-family: 'Libre Baskerville', Georgia, serif;}
+.topbar {font-family: 'Oswald', Arial, sans-serif;}
 
-.navbar {font-family: 'Libre Baskerville', Georgia, serif;}
+.navbar {font-family: 'Oswald', Arial, sans-serif;}
 
 
 /* HEADERS */
@@ -22,19 +22,22 @@ h1 {color: #d9ab2e !important;
 text-align: center !important;
 text-transform: uppercase !important;
 letter-spacing: 4px !important;
-font-family: 'Libre Baskerville', Georgia, serif;}
+font-family: 'Playfair Display', Georgia, serif;
+font-weight: 900 !important;}
 
 h2 {color: #d9ab2e !important;
-    font-size: 22px;
+    font-size: 26px;
 text-transform: uppercase !important;
 letter-spacing: 2px !important;
-font-family: 'Libre Baskerville', Georgia, serif;}
+font-family: 'Playfair Display', Georgia, serif;
+font-weight: 700 !important;}
 
 h3, h4, h5, h6 {color: #d9ab2e !important;
-    font-size: 16px;
+    font-size: 15px;
 text-transform: uppercase !important;
-letter-spacing: 2px !important;
-font-family: 'Libre Baskerville', Georgia, serif;}
+letter-spacing: 3px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-weight: 400 !important;}
 
 /* LINKS */
 
@@ -52,19 +55,25 @@ text-decoration: none !important;	}
 
 @media screen and (min-width: 601px) {
 body {
-    background: #0f0d0b url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat fixed !important;
+    background: url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat fixed,
+radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0.0) 38%, rgba(0, 0, 0, 0.55) 100%) fixed,
+radial-gradient(ellipse 1100px 620px at 50% 0%, rgba(217, 171, 46, 0.16) 0%, rgba(15, 13, 11, 0.0) 70%) fixed,
+radial-gradient(ellipse 1300px 700px at 50% 100%, rgba(79, 146, 135, 0.14) 0%, rgba(15, 13, 11, 0.0) 70%) fixed,
+linear-gradient(180deg, #191410 0%, #0f0d0b 45%, #070605 100%) fixed !important;
     color: #d8cdb4 !important; } }
 
 @media screen and (max-width: 600px){
 body {
-background: #0f0d0b !important;
-background-size: cover;
+    background: url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat,
+radial-gradient(ellipse 700px 420px at 50% 0%, rgba(217, 171, 46, 0.16) 0%, rgba(15, 13, 11, 0.0) 70%),
+linear-gradient(180deg, #191410 0%, #0f0d0b 55%, #070605 100%) !important;
+background-size: auto, cover, cover;
 color: #d8cdb4 !important; } }
 
 /* MAIN PANEL */
 
 .container.main {
-    background: rgba(20, 17, 14, 0.94) !important;
+    background: linear-gradient(180deg, rgba(28, 23, 19, 0.93) 0%, rgba(17, 14, 12, 0.93) 100%) !important;
     color: #d8cdb4 !important;
 border: 1px solid #3b322a !important;
 border-top: none !important;
@@ -117,7 +126,7 @@ border-top: none !important;
     color: #756853 !important;
 border: 1px solid #3b322a !important;
 border-radius: 0px !important;
-font-family: 'Libre Baskerville', Georgia, serif;
+font-family: 'Space Mono', 'Courier New', monospace;
 font-size: 10px !important;
 letter-spacing: 1px !important;
 text-transform: uppercase !important; }
@@ -200,9 +209,9 @@ box-shadow: none !important;  }
 border: none !important;
 border-bottom: 1px solid #5c4e40 !important;
 border-radius: 0px !important;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 11px !important;
-letter-spacing: 2px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 13px !important;
+letter-spacing: 3px !important;
 text-transform: uppercase !important;
 text-shadow: none !important; }
 
@@ -248,8 +257,8 @@ button#label_currentChannel, button.channelSwitcher, .chatMenu-option {
     color: #a2937a !important;
 border: 1px solid #3b322a !important;
 border-radius: 0px !important;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 9px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 11px !important;
 letter-spacing: 1px !important;
 text-transform: uppercase !important;
 text-shadow: none !important;
@@ -280,7 +289,7 @@ div#chatMessageContainer {
 .s-chat-sidebar, #fra_chatContainer {
     background: rgba(12, 10, 8, 0.97) !important;
     color: #d8cdb4 !important;
-font-family: 'Cormorant Garamond', Georgia, serif !important;
+font-family: 'EB Garamond', Georgia, serif !important;
 border: none !important;
 box-shadow: none !important;
 margin: 0px !important; }
@@ -300,7 +309,7 @@ border: none !important; }
     background: #2e271f !important;
     color: #d9ab2e !important;
 border: 1px solid #5c4e40 !important;
-font-family: 'Libre Baskerville', Georgia, serif;
+font-family: 'Oswald', Arial, sans-serif;
 text-transform: uppercase !important; }
 
 #chatMessagePinned, .s-chat-message__pinned {
@@ -363,8 +372,8 @@ color: #d9ab2e !important; }
 .s-chat-message_timestamp {
     color: #756853 !important;
 display: block !important;
-font-size: 10px !important;
-font-style: italic !important;
+font-family: 'Space Mono', 'Courier New', monospace !important;
+font-size: 9px !important;
 text-shadow: none !important;
 margin-top: 3px !important; }
 
@@ -402,7 +411,7 @@ div.emoteList, div.emoteList.active {
     color: #d8cdb4 !important;
 border: 1px solid #5c4e40 !important;
 border-radius: 0px !important;
-font-family: 'Cormorant Garamond', Georgia, serif !important;
+font-family: 'EB Garamond', Georgia, serif !important;
 padding: 6px 8px !important; }
 
 #txtChatInput:focus {
@@ -419,9 +428,9 @@ font-style: italic !important; }
     color: #f0cb5a !important;
 border: 1px solid #d9ab2e !important;
 border-radius: 0px !important;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 10px !important;
-letter-spacing: 2px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 12px !important;
+letter-spacing: 3px !important;
 text-transform: uppercase !important;
 padding: 6px 16px !important;
 text-shadow: none !important;
@@ -433,7 +442,7 @@ cursor: pointer !important; }
 
 #lblCharacterCounter, #txtChatContainer a[href*="code.php"] {
     color: #756853 !important;
-font-family: 'Libre Baskerville', Georgia, serif;
+font-family: 'Space Mono', 'Courier New', monospace;
 font-size: 9px !important;
 letter-spacing: 1px !important;
 text-transform: uppercase !important;
@@ -484,8 +493,8 @@ margin-left: auto !important; }
     color: #a2937a !important;
 border: 1px solid #5c4e40 !important;
 border-radius: 0px !important;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 9px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 11px !important;
 letter-spacing: 1px !important;
 text-transform: uppercase !important;
 padding: 3px 8px !important;
@@ -587,8 +596,8 @@ border-color: #d9ab2e !important; }
 .thumbnail .caption, .caption {
     background: #16120f !important;
     color: #d9ab2e !important;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 10px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 12px !important;
 letter-spacing: 2px !important;
 text-transform: uppercase !important;
 text-align: center !important;
@@ -604,8 +613,8 @@ a.btn.btn-default.button {
 border: 1px solid #5c4e40 !important;
 border-radius: 0px !important;
     color: #d8cdb4 !important;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 10px !important;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 12px !important;
 letter-spacing: 2px !important;
 text-transform: uppercase !important;
     text-shadow: none !important;
@@ -625,8 +634,8 @@ select, textarea, .form-control {
     background: #0c0a08 !important;
     color: #d8cdb4 !important;
 border: 1px solid #3b322a !important;
-font-family: 'Cormorant Garamond', Georgia, serif !important;
-font-size: 14px !important;
+font-family: 'EB Garamond', Georgia, serif !important;
+font-size: 16px !important;
 letter-spacing: 0px !important;
 text-transform: none !important }
 
@@ -661,8 +670,12 @@ border: 1px solid #5c4e40; }
 /* CREDIT */
 
 .breadcrumb::after {
-        content: "css by nub (#166079)";
+        content: "css by nub (#166079) - template by katie (#106445) & jester (#187561)";
         color: #756853;
+        font-family: 'Oswald', Arial, sans-serif;
+        font-size: 10px;
+        letter-spacing: 0px;
+        white-space: nowrap;
         position: absolute;
         right: 20%;
         z-index: 100; }
@@ -681,7 +694,11 @@ border: 1px solid #5c4e40; }
 
     @media only screen and (max-width: 767px) {
         .breadcrumb::after {
-            right: 22%;
+            position: static;
+            display: block;
+            margin-top: 4px;
+            text-align: center;
+            white-space: normal;
         }
     }
 
@@ -741,22 +758,25 @@ height: 150px;
 
 /* MEMBER ONLINE */
 .member-online {
-    background: #8fae3f;
-	border-radius: 0px;
-    width:40px!important;
-    height:40px;
-	margin:-10px;
-	margin-left:10px; }
+    background: #34DD1A !important;
+	border-radius: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+	margin: 0px 4px 0px 0px !important;
+	padding: 0px !important;
+	display: inline-block !important;
+	vertical-align: middle !important; }
 
 /* MEMBER OFFLINE */
 .member-offline {
-    background: #3b322a;
-	border-radius: 0px;
-    width:40px!important;
-    height:40px;
-	margin:-10px;
-	margin-left:10px;
-	filter: saturate(0%); }
+    background: #CD0000 !important;
+	border-radius: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+	margin: 0px 4px 0px 0px !important;
+	padding: 0px !important;
+	display: inline-block !important;
+	vertical-align: middle !important; }
 
 .badge {
     background: #a8382a !important;
@@ -774,17 +794,17 @@ them all and the bits that actually want them get them back below.
 dont delete that or it all spreads out like a puddle */
 
 .de-territory {
-    width: 440px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 860px;
     margin: 14px auto;
-    padding: 0px 0px 18px;
+    padding: 0px 0px 22px;
     box-sizing: border-box;
     background: linear-gradient(180deg, #241f1a 0%, #120f0d 100%);
     color: #d8cdb4;
     border: 1px solid #5c4e40;
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     text-align: center;
-    line-height: 1.6; }
+    line-height: 1.65; }
 
 .de-territory br {display: none;}
 .de-prose br, .de-note br, .de-role br {display: inline;}
@@ -799,34 +819,34 @@ gap: 10px;
     background: #0c0a08;
     color: #756853;
 border-bottom: 1px solid #3b322a;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 10px;
+font-family: 'Space Mono', 'Courier New', monospace;
+font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase; }
 
 .de-bar-mid {color: #a2937a;}
 
-.de-head {padding: 18px 18px 0px;}
+.de-head {padding: 26px 26px 0px;}
 
 .de-portrait {
-    width: 104px;
-    height: 104px;
+    width: 128px;
+    height: 128px;
     object-fit: cover;
 border: 2px solid #5c4e40; }
 
 .de-name {
-    margin-top: 14px;
+    margin-top: 16px;
     color: #d8cdb4;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 19px;
+font-family: 'Playfair Display', Georgia, serif;
+font-size: 26px;
 font-weight: 700;
-letter-spacing: 5px;
+letter-spacing: 7px;
 text-transform: uppercase; }
 
 .de-role {
-    margin-top: 4px;
+    margin-top: 6px;
     color: #a2937a;
-font-size: 14px;
+font-size: 16px;
 font-style: italic; }
 
 .de-tags {
@@ -834,7 +854,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 gap: 7px;
-margin: 16px 18px 0px; }
+margin: 18px 26px 0px; }
 
 .de-tag {
 display: inline-flex;
@@ -844,8 +864,8 @@ gap: 7px;
     background: #241f1a;
     color: #a2937a;
 border: 1px solid #5c4e40;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 9px;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 11px;
 letter-spacing: 3px;
 text-transform: uppercase;
 transition: 0.3s; }
@@ -866,29 +886,29 @@ background: currentColor; }
 .de-tag-gold {color: #d9ab2e; border-color: #8a6c15;}
 
 .de-check {
-    margin: 18px 18px 0px;
+    margin: 20px 26px 0px;
     background: #16120f;
 border: 1px solid #5c4e40; }
 
 .de-skill {
-    padding: 7px 12px;
+    padding: 8px 14px;
     background: linear-gradient(180deg, #f0cb5a 0%, #d9ab2e 55%, #8a6c15 100%);
     color: #1c1405;
 border-bottom: 1px solid #0f0d0b;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 13px;
-font-weight: 700;
-letter-spacing: 3px;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 16px;
+font-weight: 500;
+letter-spacing: 4px;
 text-transform: uppercase; }
 
-.de-check-body {padding: 16px 18px 14px;}
+.de-check-body {padding: 18px 26px 16px;}
 
 .de-result {
     color: #d8cdb4;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 26px;
-font-weight: 700;
-letter-spacing: 4px;
+font-family: 'Playfair Display', Georgia, serif;
+font-size: 34px;
+font-weight: 900;
+letter-spacing: 5px;
 text-transform: uppercase; }
 
 /* swap the class in the html for the other one */
@@ -896,27 +916,29 @@ text-transform: uppercase; }
 .de-result-fail {color: #c85a3e;}
 
 .de-odds {
-    margin-top: 2px;
+    margin-top: 4px;
     color: #d8cdb4;
-font-family: 'Libre Baskerville', Georgia, serif;
+font-family: 'Space Mono', 'Courier New', monospace;
 font-size: 20px;
+font-weight: 700;
 letter-spacing: 2px; }
 
 .de-prose {
-    margin: 14px 0px 0px;
-    padding: 9px 13px;
+    margin: 16px auto 0px;
+    padding: 11px 16px;
+    max-width: 620px;
     background: #12100d;
     color: #a2937a;
 border-left: 2px solid #a8382a;
 text-align: left;
-font-size: 15px;
+font-size: 17px;
 font-style: italic;
 line-height: 1.75; }
 
 .de-note {
-    margin-top: 14px;
+    margin-top: 16px;
     color: #756853;
-font-size: 13px;
+font-size: 14px;
 font-style: italic;
 line-height: 1.5; }
 
@@ -943,23 +965,23 @@ letter-spacing: 3px; }
 display: block;
     margin-top: 2px;
     color: #756853;
-font-family: 'Libre Baskerville', Georgia, serif;
+font-family: 'Space Mono', 'Courier New', monospace;
 font-size: 9px;
 letter-spacing: 2px;
 text-transform: uppercase; }
 
 /* has to be a link with a span inside, lioden strips class off <a> */
 
-.de-options {margin: 16px 18px 0px; text-align: left;}
+.de-options {margin: 20px 26px 0px; text-align: left;}
 
 .de-options a {display: block;}
 
 .de-opt {
 display: block;
-    padding: 8px 10px;
+    padding: 9px 12px;
     color: #c85a3e;
 border-left: 2px solid transparent;
-font-size: 15px;
+font-size: 17px;
 line-height: 1.55;
 transition: 0.3s; }
 
@@ -969,25 +991,89 @@ transition: 0.3s; }
 border-left-color: #d9ab2e; }
 
 .de-opt-num {
-    margin-right: 7px;
+    margin-right: 8px;
     color: #756853;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 11px; }
+font-family: 'Space Mono', 'Courier New', monospace;
+font-size: 12px; }
 
 .de-opt-skill {
-    margin-right: 5px;
+    margin-right: 6px;
     color: #6fb3a6;
-font-family: 'Libre Baskerville', Georgia, serif;
-font-size: 10px;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 12px;
 letter-spacing: 1px;
 text-transform: uppercase; }
 
+/* THE BADGE SHELF */
+
+.de-badges {
+    margin: 22px 26px 0px;
+    padding: 14px 12px 12px;
+    background: #16120f;
+border: 1px solid #5c4e40; }
+
+.de-badges-head {
+    margin-bottom: 12px;
+    color: #756853;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase; }
+
+.de-badge-row {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 16px; }
+
+.de-badge {flex: 0 0 auto; width: 150px;}
+
+.de-badge-img {
+    width: 96px;
+    height: 96px;
+    padding: 7px;
+    object-fit: contain;
+    background: #12100d;
+border: 1px solid #3b322a;
+    opacity: 0.86;
+filter: saturate(72%);
+transition: 0.3s; }
+
+.de-badge:hover .de-badge-img {
+    opacity: 1.0;
+filter: saturate(100%);
+border-color: #d9ab2e; }
+
+.de-badge-label {
+display: block;
+    margin-top: 7px;
+    color: #a2937a;
+font-family: 'Oswald', Arial, sans-serif;
+font-size: 11px;
+letter-spacing: 1px;
+text-transform: uppercase;
+line-height: 1.4;
+transition: 0.3s; }
+
+.de-badge:hover .de-badge-label {color: #d9ab2e;}
+
+.de-badge-note {
+display: block;
+    margin-top: 4px;
+    color: #756853;
+font-family: 'Space Mono', 'Courier New', monospace;
+font-size: 8px;
+letter-spacing: 1px; }
+
+.de-badge-note a {color: #756853 !important;}
+.de-badge-note a:hover {color: #d9ab2e !important;}
+
 .de-foot {
-    margin: 18px 18px 0px;
-    padding-top: 10px;
+    margin: 22px 26px 0px;
+    padding-top: 12px;
     color: #756853;
 border-top: 1px solid #3b322a;
-font-family: 'Libre Baskerville', Georgia, serif;
+font-family: 'Space Mono', 'Courier New', monospace;
 font-size: 9px;
 letter-spacing: 3px;
 text-transform: uppercase; }
@@ -995,18 +1081,51 @@ text-transform: uppercase; }
 .de-foot a {color: #756853 !important;}
 .de-foot a:hover {color: #d9ab2e !important;}
 
+.de-foot-credit {
+display: block;
+    margin-top: 5px;
+    color: #5c5343;
+font-size: 8px;
+letter-spacing: 2px; }
+
+.de-foot-credit a {color: #756853 !important;}
+.de-foot-credit a:hover {color: #d9ab2e !important;}
+
 /* dice were falling off the edge on my phone */
 
 @media only screen and (max-width: 480px) {
-        .de-territory {
-            width: 100%;
+        .de-head {
+            padding: 18px 14px 0px;
+        }
+        .de-tags, .de-check, .de-options, .de-badges, .de-foot {
+            margin-left: 14px;
+            margin-right: 14px;
+        }
+        .de-badge {
+            width: 128px;
+        }
+        .de-badge-img {
+            width: 84px;
+            height: 84px;
+        }
+        .de-check-body {
+            padding: 14px 14px 12px;
+        }
+        .de-portrait {
+            width: 104px;
+            height: 104px;
         }
         .de-name {
-            font-size: 16px;
-            letter-spacing: 3px;
+            font-size: 19px;
+            letter-spacing: 4px;
+        }
+        .de-skill {
+            font-size: 14px;
+            letter-spacing: 2px;
         }
         .de-result {
-            font-size: 22px;
+            font-size: 24px;
+            letter-spacing: 3px;
         }
         .de-dice {
             gap: 16px;
