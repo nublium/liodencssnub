@@ -56,27 +56,20 @@ text-decoration: none !important;	}
 @media screen and (min-width: 601px) {
 body {
     background: url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat fixed,
-radial-gradient(ellipse 1600px 240px at 50% 70%, rgba(178, 204, 162, 0.11) 0%, rgba(11, 15, 11, 0.0) 72%) fixed,
-radial-gradient(ellipse 1500px 200px at 50% 38%, rgba(178, 204, 162, 0.07) 0%, rgba(11, 15, 11, 0.0) 74%) fixed,
-radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0.0) 36%, rgba(0, 0, 0, 0.6) 100%) fixed,
-radial-gradient(ellipse 1100px 620px at 50% 0%, rgba(224, 132, 47, 0.2) 0%, rgba(11, 15, 11, 0.0) 70%) fixed,
-radial-gradient(ellipse 1300px 700px at 50% 100%, rgba(111, 156, 60, 0.18) 0%, rgba(11, 15, 11, 0.0) 70%) fixed,
-linear-gradient(180deg, #141c14 0%, #0b0f0b 45%, #050805 100%) fixed !important;
+url('https://www.transparenttextures.com/patterns/black-linen.png') repeat fixed,
+#0b0f0b !important;
     color: #cdd8bd !important; } }
 
 @media screen and (max-width: 600px){
 body {
-    background: url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat,
-radial-gradient(ellipse 900px 200px at 50% 68%, rgba(178, 204, 162, 0.11) 0%, rgba(11, 15, 11, 0.0) 72%),
-radial-gradient(ellipse 700px 420px at 50% 0%, rgba(224, 132, 47, 0.2) 0%, rgba(11, 15, 11, 0.0) 70%),
-linear-gradient(180deg, #141c14 0%, #0b0f0b 55%, #050805 100%) !important;
-background-size: auto, cover, cover, cover;
+background: #0b0f0b url('https://www.transparenttextures.com/patterns/dark-leather.png') repeat !important;
+background-size: cover;
 color: #cdd8bd !important; } }
 
 /* MAIN PANEL */
 
 .container.main {
-    background: linear-gradient(180deg, rgba(22, 30, 21, 0.93) 0%, rgba(13, 18, 13, 0.93) 100%) !important;
+    background: rgba(16, 23, 16, 0.93) !important;
     color: #cdd8bd !important;
 border: 1px solid #2d3b29 !important;
 border-top: none !important;
@@ -247,27 +240,12 @@ box-shadow: none !important; }
 .progress div {
     color: #cdd8bd !important; }
 
-.progress div:not(.progress-bar) {
-z-index: 2 !important; }
-
 .progress {
     background: #080c08 !important;
     color: #HEX !important;
 border: 1px solid #2d3b29 !important;
 border-radius: 0px !important;
-height: 16px !important;
-position: relative !important;  }
-
-.progress::after {
-content: "";
-position: absolute;
-top: 0px;
-left: 0px;
-right: 0px;
-bottom: 0px;
-z-index: 1;
-    background: repeating-linear-gradient(90deg, rgba(11, 15, 11, 0.0) 0px, rgba(11, 15, 11, 0.0) 12px, rgba(11, 15, 11, 0.9) 12px, rgba(11, 15, 11, 0.9) 14px);
-pointer-events: none; }
+height: 16px !important;  }
 
 /* CHAT */
 
@@ -679,19 +657,13 @@ transition: 0.3s; }
      background: #24301f !important;
 border-color: #e0842f !important; }
 
-.cave-grid img,
-.mound-grid img {
-border-radius: 8px 8px 0px 0px !important; }
-
 /* PRIDE OVERVIEW BANNER */
 
 img[src$="prideoverviewbanner.png"] {
     content: url('https://nublium.github.io/liodencssnub/overviewpride.jpg') !important;
     width: 100% !important;
-    height: auto !important;
-aspect-ratio: 260 / 60 !important;
-object-fit: cover !important;
-object-position: center !important; }
+    height: 60px !important;
+object-fit: cover !important; }
 
 
 /* SCROLL BOXES */
@@ -707,15 +679,31 @@ border: 1px solid #46583d; }
 ::-webkit-scrollbar-thumb:hover {
     background: #46583d; }
 
+/* CUSTOM CURSOR - haunter for normal, gengar for anything you can click. */
+
+body {
+cursor: url('https://nublium.github.io/liodencssnub/hauntermouse-cursor.png') 8 5, auto; }
+
+a, a:link, a:visited, a:hover,
+button, .btn, .btn.button, button.button,
+input[type="submit"], input[type="button"],
+input[type="checkbox"], input[type="radio"],
+select, label, summary,
+.cave-grid, .mound-grid,
+#btnChatSend, #btnToggleSidebarChat, h3 a[href*="chat.php"] {
+cursor: url('https://nublium.github.io/liodencssnub/gengarmouse-cursor.png') 8 5, pointer !important; }
+
+/* text fields keep the normal beam so you can still see where you type */
+
+input[type="text"], input[type="password"], input[type="number"],
+input[type="search"], input[type="email"], textarea {
+cursor: text !important; }
+
 /* CREDIT */
 
 .breadcrumb::after {
-        content: "css by nub (#166079) - template by katie (#106445) & jester (#187561)";
+        content: "css by nub (#166079) - template by katie & jester";
         color: #67735b;
-        font-family: 'Oswald', Arial, sans-serif;
-        font-size: 10px;
-        letter-spacing: 0px;
-        white-space: nowrap;
         position: absolute;
         right: 20%;
         z-index: 100; }
@@ -1130,8 +1118,8 @@ gap: 16px; }
     object-fit: contain;
     background: #0e140e;
 border: 1px solid #2d3b29;
-    opacity: 0.86;
-filter: saturate(72%);
+    opacity: 0.85;
+filter: saturate(70%);
 transition: 0.3s; }
 
 .de-badge:hover .de-badge-img {
@@ -1237,9 +1225,7 @@ div#lion_image {
     opacity: 1.0;
 border-radius: 50%;
 overflow: hidden;
-border: 3px solid #46583d !important;
-outline: 1px solid #e0842f !important;
-outline-offset: 3px !important; }
+border: 3px solid #e0842f !important; }
 div#lion_image > div {
 border-radius: 50%;
 overflow: hidden; }
@@ -1248,10 +1234,8 @@ table#player img {
     opacity: 1.0;
 border-radius: 50%; }
 
-table#player img:not([src*="icon_"]) {
-border: 3px solid #46583d !important;
-outline: 1px solid #e0842f !important;
-outline-offset: 3px !important; }
+table#player img[style*="150px"] {
+border: 3px solid #e0842f !important; }
 
 img[src*="images/tags/"],
 img[src*="/uimages/"],
